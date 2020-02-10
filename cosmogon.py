@@ -107,7 +107,7 @@ def cosmogon(stdscr):
         cursor_y = min(pheight-2, cursor_y)
 
         # Declaration of strings
-        view = " You are loking at : {}".format(str(world.mat[cursor_y,cursor_x]))
+        view = " You are looking at : {}".format(str(world.mat[cursor_y,cursor_x]))
         statusbarstr = " Press 'q' to exit | Last key pressed: {} | Pos: {}, {}"
         statusbarstr = statusbarstr.format(k , cursor_y, cursor_x)
         calstr = str(calendar)
