@@ -27,9 +27,31 @@ class World(object):
         self.mat = numpy.random.randint(9,size=(h,w))
         self.h = h
         self.w = w
+        self.pops = []
 
     def __str__(self):
         return name
+
+class Population(object):
+
+    def __init__(self, owner):
+        self.name = name
+        self.size = 100
+        self.growth = 1.2
+        self.owner = owner
+        self.influence = {self.owner:100}
+        self.cap = 10000
+
+    def grow(self):
+        self.size = int(self.size*self.growth)
+        if self.size > self.cap:
+            self.size = self.cap
+
+    def turn(self):
+        if len(list(self.influence.keys())) > 1:
+            for other in list(self.influence.keys())[1:]:
+                if self.influence[other] > self.influence[owner]:
+                    self.owner = other
 
 def trace_cursor(k, cursor_y, cursor_x):
 
@@ -51,7 +73,7 @@ def trace_cursor(k, cursor_y, cursor_x):
         cursor_x = cursor_x - 5
     return(cursor_y, cursor_x)
 
-def world_pad(source):
+def generate_world_pad(source):
 
     world = curses.newpad(source.h+1, source.w+1)
     for i in range(0, source.h):
@@ -80,7 +102,7 @@ def cosmogon(stdscr):
 
     # Create a new world
     world = World("Alpha", 30, 50)
-    world_pad = world_pad(world)
+    world_pad = generate_world_pad(world)
 
     # Loop where k is the last character pressed
     while True:
