@@ -51,7 +51,7 @@ def trace_cursor(k, cursor_y, cursor_x):
         cursor_x = cursor_x - 5
     return(cursor_y, cursor_x)
 
-def world_gen(source):
+def world_pad(source):
 
     world = curses.newpad(source.h+1, source.w+1)
     for i in range(0, source.h):
@@ -80,7 +80,7 @@ def cosmogon(stdscr):
 
     # Create a new world
     world = World("Alpha", 30, 50)
-    world_pad = world_gen(world)
+    world_pad = world_pad(world)
 
     # Loop where k is the last character pressed
     while True:
