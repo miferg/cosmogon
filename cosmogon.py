@@ -24,13 +24,19 @@ class World(object):
 
     def __init__(self, name, h, w):
         self.name = name
-        self.mat = numpy.random.randint(9,size=(h,w))
+        self.mat = numpy.random.randint(9,size=(h,w))+1
         self.h = h
         self.w = w
         self.pops = []
+        self.map = {}
 
     def __str__(self):
         return name
+
+    def gen_map(self):
+        for x in range(0,self.w):
+            for y in range (0,self.h):
+                self.map[(x,y)] = char_dict[self.mat[y,x]]
 
 class Population(object):
 
@@ -53,6 +59,18 @@ class Population(object):
                 if self.influence[other] > self.influence[owner]:
                     self.owner = other
 
+char_dict = {
+    1:"~",
+    2:"-",
+    3:"·",
+    4:"t",
+    5:"^",
+    6:"#",
+    7:"ª",
+    8:"a",
+    9:"A",
+    }
+
 def trace_cursor(k, cursor_y, cursor_x):
 
     if k == 258:
@@ -73,12 +91,12 @@ def trace_cursor(k, cursor_y, cursor_x):
         cursor_x = cursor_x - 5
     return(cursor_y, cursor_x)
 
-def generate_world_pad(source):
+def gen_world_pad(source):
 
     world = curses.newpad(source.h+1, source.w+1)
     for i in range(0, source.h):
         for j in range(0, source.w):
-            world.addch(i, j, str(source.mat[i,j]))
+            world.addch(i, j, str(source.map[(j,i)]))
     return(world)
 
 def cosmogon(stdscr):
@@ -102,7 +120,8 @@ def cosmogon(stdscr):
 
     # Create a new world
     world = World("Alpha", 30, 50)
-    world_pad = generate_world_pad(world)
+    world.gen_map()
+    world_pad = gen_world_pad(world)
 
     # Loop where k is the last character pressed
     while True:
