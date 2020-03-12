@@ -11,14 +11,24 @@ class Calendar(object):
         self.month = 0
         self.year = 0
         self.origin = time.perf_counter()
+        self.pausetime = 0
+        self.pauseinit = 0
 
     def __str__(self):
-        return " Year: {} Month: {}".format(self.year, self.month+1)
+        return "Year: {} Month: {}".format(self.year, self.month + 1)
 
     def update(self):
-        change = time.perf_counter() - self.origin
-        self.year = int(change // 36)
-        self.month = int((change % 36) // 3)
+        change = time.perf_counter() - self.origin - self.pausetime
+        # month duration in seconds
+        dur = 5
+        self.year = int(change // (12 * dur))
+        self.month = int((change % (12 * dur)) // dur)
+
+    def pause(self):
+        self.pauseinit = time.perf_counter()
+
+    def unpause(self):
+        self.pausetime += time.perf_counter() - self.pauseinit
 
 class World(object):
 
@@ -184,25 +194,41 @@ def cosmogon(stdscr):
         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
         ])
 
-    #Begin the count of time
-    calendar = Calendar()
-
     # Create a new world
     world = World("Alpha", 30, 50)
-    world.mat = testmat # use the provisional matrx
+    # Use the provitional matrix
+    world.mat = testmat 
     world.gen_map(char_dict)
     world.gen_col(col_dict)
     world_pad = gen_world_pad(world)
 
+    # World is paused
+    calendar = Calendar()
+    paused = 1
+    calendar.pause()
+
     # Loop where k is the last character pressed
     while True:
 
+        # Pause and unpause
+        if k == 112:
+            if paused == 1: 
+                # if paused, unpause
+                calendar.unpause()
+                stdscr.nodelay(True)
+                paused = 0
+            else:
+                # if unpaused, pause
+                calendar.pause()
+                stdscr.nodelay(False)
+                paused = 1
+
+        # Quit to menu
         if k == 113:
             main_menu(stdscr)
 
         # Initialization
         curses.curs_set(True)
-        stdscr.nodelay(True)
         curses.napms(41)
         stdscr.clear()
         height, width = stdscr.getmaxyx()
@@ -220,13 +246,14 @@ def cosmogon(stdscr):
 
         # Declaration of strings
         view = " Viewing: {}".format(type_dict[world.mat[cursor_y,cursor_x]])
-        statusbarstr = " Press 'q' to exit | Last key pressed: {} | Pos: {}, {}"
+        statusbarstr = " Quit 'q' | Pause 'p' | Last: {} Pos: {}, {}"
         statusbarstr = statusbarstr.format(k , cursor_y, cursor_x)
         calstr = str(calendar)
 
         # Update and print date
-        calendar.update()
-        stdscr.addstr(0, 0, calstr, curses.color_pair(5))
+        if paused == 0:
+            calendar.update()
+        stdscr.addstr(0, 0, " "+ world.name +", "+ calstr, curses.color_pair(5))
 
         # Render information
         stdscr.addstr(height-4, 0, view)
