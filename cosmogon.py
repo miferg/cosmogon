@@ -20,7 +20,7 @@ class Calendar(object):
     def update(self):
         change = time.perf_counter() - self.origin - self.pausetime
         # month duration in seconds
-        dur = 5
+        dur = 1
         self.year = int(change // (12 * dur))
         self.month = int((change % (12 * dur)) // dur)
 
@@ -37,9 +37,10 @@ class World(object):
         self.mat = numpy.random.randint(1,size=(h,w)) + 1
         self.h = h
         self.w = w
-        self.pops = []
+        self.pops = {}
         self.map = {}
         self.col = {}
+        self.poplist = []
 
     def __str__(self):
         return name
@@ -57,18 +58,25 @@ class World(object):
             for y in range (0,self.h):
                 self.col[(x,y)] = col_dict[self.mat[y,x]]
 
+    def create_pop(self,x,y,name,owner):
+        self.pops[(x,y)] = Population(name,owner)
+        self.mat[y][x] = 7
+        self.poplist.append((x,y))
+
+
+
 class Population(object):
 
-    def __init__(self, owner):
+    def __init__(self, name, owner):
         self.name = name
         self.size = 100
-        self.growth = 1.2
+        self.growth = 0.006
         self.owner = owner
         self.influence = {self.owner:100}
         self.cap = 10000
 
     def grow(self):
-        self.size = int(self.size*self.growth)
+        self.size = self.size + (self.size*self.growth*((self.cap-self.size)/self.cap))
         if self.size > self.cap:
             self.size = self.cap
 
@@ -172,7 +180,7 @@ def cosmogon(stdscr):
         [1,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,3,3,3,3,2,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,1,1,1,1,1,1],
         [1,1,1,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,2,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1],
         [1,1,1,1,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,2,2,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,1,1,1,1,1,1,1,1],
-        [1,1,1,1,1,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,2,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,7,6,3,3,1,1,1,1,1,1,1],
+        [1,1,1,1,1,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,2,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,6,3,3,1,1,1,1,1,1,1],
         [1,1,2,2,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,6,2,2,1,1,1,1,1,1,1,1],
         [1,1,3,2,2,2,2,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,3,3,3,3,1,1,1,1,1],
         [1,3,3,3,3,3,2,2,2,2,3,3,3,3,3,3,3,4,4,4,4,4,2,4,4,4,4,4,4,4,4,4,4,4,3,2,2,2,3,3,3,3,3,1,1,1,1,1,1,1],
@@ -188,7 +196,7 @@ def cosmogon(stdscr):
         [1,1,1,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,2,2,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1],
         [1,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,2,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,1,1,1,1,1,1,1],
         [1,1,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,2,2,3,3,3,3,3,3,3,3,4,3,3,3,3,3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1],
-        [1,1,1,1,1,1,3,3,3,3,3,3,3,3,3,3,7,6,4,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,1,1,1,1,1,1,1],
+        [1,1,1,1,1,1,3,3,3,3,3,3,3,3,3,3,3,6,4,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,1,1,1,1,1,1,1],
         [1,1,1,1,1,3,3,3,3,3,3,3,3,3,3,3,6,2,2,2,3,3,3,3,3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
         [1,1,1,1,1,3,3,3,3,3,3,3,3,3,3,3,3,2,3,3,3,3,3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
@@ -196,7 +204,7 @@ def cosmogon(stdscr):
 
     # Create a new world
     world = World("Alpha", 30, 50)
-    # Use the provitional matrix
+    # Use the provisional matrix
     world.mat = testmat 
     world.gen_map(char_dict)
     world.gen_col(col_dict)
@@ -206,6 +214,9 @@ def cosmogon(stdscr):
     calendar = Calendar()
     paused = 1
     calendar.pause()
+
+    # Start timer for pops to grow
+    grow_month = 1
 
     # Loop where k is the last character pressed
     while True:
@@ -222,6 +233,13 @@ def cosmogon(stdscr):
                 calendar.pause()
                 stdscr.nodelay(False)
                 paused = 1
+
+        # Create pop
+        if k == 99:
+            world.create_pop(cursor_x,cursor_y,'name','owner')
+            world.gen_map(char_dict)
+            world.gen_col(col_dict)
+            world_pad = gen_world_pad(world)
 
         # Quit to menu
         if k == 113:
@@ -244,21 +262,25 @@ def cosmogon(stdscr):
         cursor_y = max(0, cursor_y)
         cursor_y = min(pheight-2, cursor_y)
 
-        # Declaration of strings
-        view = " Viewing: {}".format(type_dict[world.mat[cursor_y,cursor_x]])
-        statusbarstr = " Quit 'q' | Pause 'p' | Last: {} Pos: {}, {}"
-        statusbarstr = statusbarstr.format(k , cursor_y, cursor_x)
-        calstr = str(calendar)
+        # View information on the map
+        view = " Viewing: {}, ".format(type_dict[world.mat[cursor_y,cursor_x]])
+        try:
+            view += world.pops[(cursor_x,cursor_y)].name
+            view += ": "+ str(int(world.pops[(cursor_x,cursor_y)].size)) +" inhabitants."
+        except:
+            view += 'unpopulated'
+
+        stdscr.addstr(height-4, 0, view)
 
         # Update and print date
+        calstr = str(calendar)
         if paused == 0:
             calendar.update()
         stdscr.addstr(0, 0, " "+ world.name +", "+ calstr, curses.color_pair(5))
 
-        # Render information
-        stdscr.addstr(height-4, 0, view)
-
         # Render status bar
+        statusbarstr = " Quit 'q' | Pause 'p' | Last: {} Pos: {}, {}"
+        statusbarstr = statusbarstr.format(k , cursor_y, cursor_x)
         stdscr.attron(curses.color_pair(4))
         stdscr.addstr(height-1, 0, statusbarstr)
         stdscr.addstr(height-1, len(statusbarstr), " " * (width - len(statusbarstr) - 1))
@@ -272,6 +294,12 @@ def cosmogon(stdscr):
 
         # Refresh the world
         world_pad.refresh( 0,0, 5,5, height-5,width-20)
+
+        # Make the pops grow
+        if calendar.month != grow_month:
+            grow_month = calendar.month
+            for pop in world.poplist:
+                world.pops[pop].grow()
 
         # Get next input
         k = stdscr.getch()
