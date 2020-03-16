@@ -1,2 +1,2 @@
-# cosmogon
-command line application
+# Cosmogon
+Command line simulation application.
