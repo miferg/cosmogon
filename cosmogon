@@ -67,14 +67,14 @@ class World(object):
                 self.col[(x,y)] = col_dict[self.mat[y,x]]
 
     def create_pop(self,world,x,y,name,owner):
-        if self.factions[owner].availpops >= 1:
-            if world.mat[y][x] not in (1,2,7,8,9):
+        if self.factions[owner].startpop == 1:
+            if world.mat[y][x] in (3, 4, 5):
                 self.pops[(x,y)] = Population(name, owner, x,y)
                 self.mat[y][x] = 7
                 self.poplist.append((x,y))
                 self.factions[owner].pops.append((x,y))
                 self.factions[owner].wealthrate += 1
-                self.factions[owner].availpops += -1
+                self.factions[owner].startpop = 0
 
 class Population(object):
 
@@ -86,10 +86,15 @@ class Population(object):
         self.influence = {self.owner:100}
         self.cap = 10000
         self.farms = 2
+        self.farmcost = 100
         self.pos_x = x
         self.pos_y = y
+        self.claimslots = 2
         self.claimed = []
+        self.claimedpos = []
+        self.claimcost = 10
         self.ar = 1  # aggro range for farms and claims
+        self.colonizecost = 1000
 
     def grow(self, world):
         self.size = self.size + (self.size*self.growth*((self.cap-self.size)/self.cap))
@@ -98,24 +103,76 @@ class Population(object):
         if self.size < 0:
             self.size = 0
 
+    def build_town(self, world):
+        if world.factions[self.owner].wealth >= 1000:
+            if world.factions[self.owner].availtowns > 0:
+                if self.size >= 8000:
+                    world.mat[self.pos_y][self.pos_x] = 8
+                    self.cap = 100000
+                    self.farms += 1
+                    self.claimslots += 1
+                    self.ar += 2
+                    world.factions[self.owner].wealth += -1000
+                    world.factions[self.owner].wealthrate += 2
+                    world.factions[self.owner].availtowns += -1
+                    world.factions[self.owner].availpops += 2
+
+    def build_city(self, world):
+        if world.factions[self.owner].wealth >= 10000:
+            if world.factions[self.owner].availcities > 0:
+                if self.size >= 80000:
+                    world.mat[self.pos_y][self.pos_x] = 9
+                    self.cap = 1000000
+                    self.farms += 2
+                    self.claimslots += 1
+                    self.ar += 4
+                    world.factions[self.owner].wealth += -10000
+                    world.factions[self.owner].wealthrate += 4
+                    world.factions[self.owner].availcities += -1
+
+    def colonize(self, x, y, world, name):
+        if self.pos_x + self.ar+1 >= x >= self.pos_x - self.ar-1:
+            if self.pos_y + self.ar+1 >= y >= self.pos_y - self.ar-1:
+                if world.factions[self.owner].wealth >= self.colonizecost:
+                    if world.factions[self.owner].availpops > 0:
+                        if world.mat[y][x] in (3, 4, 5):
+                            if self.size >= 10000:
+                                world.pops[(x,y)] = Population(name, self.owner, x,y)
+                                world.mat[y][x] = 7
+                                world.poplist.append((x,y))
+                                world.factions[self.owner].pops.append((x,y))
+                                world.factions[self.owner].availpops += -1
+                                world.factions[self.owner].wealthrate += 1
+                                world.factions[self.owner].wealth += -self.colonizecost
+                                self.colonizecost = self.colonizecost*2
+                                self.size = self.size - 150
+
     def build_farm(self, x, y, world):
-        if self.farms > 0 and world.factions[self.owner].wealth >= 100:
+        if self.farms > 0 and world.factions[self.owner].wealth >= self.farmcost:
             if self.pos_x + self.ar >= x >= self.pos_x - self.ar:
                 if self.pos_y + self.ar >= y >= self.pos_y - self.ar:
                     if world.mat[y][x] in (3,4):
                         world.mat[y][x] = 6
-                        self.growth += 0.004
+                        self.growth += 0.001
                         self.farms += -1
                         world.factions[self.owner].wealthrate += 0.5
-                        world.factions[self.owner].wealth += -100
+                        world.factions[self.owner].wealth += -self.farmcost
+                        self.farmcost += 100
 
     def claim(self, x, y, world):
         if world.mat[y][x] in (1,2,3,4,5):
-            if world.mat[y][x] not in self.claimed:
+            if self.claimslots > 0:
                 if self.pos_x + self.ar >= x >= self.pos_x - self.ar:
                     if self.pos_y + self.ar >= y >= self.pos_y - self.ar:
-                        world.factions[self.owner].wealthrate += 0.5
-                        self.claimed.append(world.mat[y][x])
+                        if (x,y) not in self.claimedpos:
+                            if world.factions[self.owner].wealth >= self.claimcost:
+                                world.factions[self.owner].wealth += -self.claimcost
+                                world.factions[self.owner].cells.append(world.mat[y][x])
+                                self.claimcost = self.claimcost*10
+                                world.factions[self.owner].wealthrate += 0.3
+                                self.claimed.append(world.mat[y][x])
+                                self.claimslots += -1
+                                self.claimedpos.append((x,y))
 
     def turn(self):
         if len(list(self.influence.keys())) > 1:
@@ -134,7 +191,11 @@ class Faction(object):
         self.wealth = 0
         self.pops =[]
         self.wealthrate = 0
-        self.availpops = 1
+        self.startpop = 1
+        self.availpops = 0
+        self.availcities = 1
+        self.availtowns = 3
+        self.cells = []
 
     def __srt__(self):
         return self.name +", "+ str(self.size) +" inhabitants."
@@ -173,7 +234,7 @@ def pause(paused, calendar, stdscr):
     stdscr.nodelay(False)
     return 1
 
-def gen_world_pad(source):
+def gen_world_pad(source):  # used when the matrix changed
     worldpad = curses.newpad(source.h+1, source.w+1)
     for i in range(0, source.h):
         for j in range(0, source.w):
@@ -217,13 +278,13 @@ def cosmogon(stdscr):
         }
 
     # Load objects
-    popnames = data.popnames
-    random.shuffle(popnames)
+    names = data.names
+    random.shuffle(names)
     char_dict = data.char_dict
     type_dict = data.type_dict
 
     # Create a new world
-    world = World(popnames.pop(), 30, 50)
+    world = World(names.pop(), 30, 50)
     world.mat = data.testmat.copy()  # Use the provisional matrix 
     world.gen_map(char_dict)
     world.gen_col(col_dict)
@@ -235,7 +296,7 @@ def cosmogon(stdscr):
     calendar.pause()
 
     # Initialize factions
-    mainame = popnames.pop()
+    mainame = names.pop()
     world.factions[mainame] = Faction(mainame)
 
     # Start timer for pops to grow
@@ -260,12 +321,12 @@ def cosmogon(stdscr):
             else:
                 paused = pause(paused, calendar, stdscr)
 
-        # Create a settlement (b)
+        # Create the first settlement (b)
         if k == 98 and paused ==1:
             if (cursor_x,cursor_y) not in world.pops.keys():
-                world.create_pop(world, cursor_x,cursor_y, popnames.pop(), world.factions[mainame].name)
-                world_pad = refresh_pad(char_dict, col_dict, world)
+                world.create_pop(world, cursor_x,cursor_y, names.pop(), world.factions[mainame].name)
                 paused = unpause(paused, calendar, stdscr)
+                world_pad = refresh_pad(char_dict, col_dict, world)
 
         # Select and deselect a settlement (s)
         if k == 115:
@@ -296,39 +357,33 @@ def cosmogon(stdscr):
             popowner =  world.pops[selected_pos].owner
             # Build town
             if world.mat[selected_pos[1]][selected_pos[0]] == 7:
-                if world.factions[popowner].wealth >= 1000:
-                    if world.pops[selected_pos].size >= 8000:
-                        world.mat[selected_pos[1]][selected_pos[0]] = 8
-                        world_pad = refresh_pad(char_dict, col_dict, world)
-                        world.pops[selected_pos].cap = 100000
-                        world.pops[selected_pos].farms += 1
-                        world.pops[selected_pos].ar += 2
-                        world.factions[popowner].wealth += -1000
-                        world.factions[popowner].wealthrate += 2
+                world.pops[selected_pos].build_town(world)
+                world_pad = refresh_pad(char_dict, col_dict, world)
             # Build city
             elif world.mat[selected_pos[1]][selected_pos[0]] == 8:
-                if world.factions[popowner].wealth >= 10000:
-                    if world.pops[selected_pos].size >= 80000:
-                        world.mat[selected_pos[1]][selected_pos[0]] = 9
-                        world_pad = refresh_pad(char_dict, col_dict, world)
-                        world.pops[selected_pos].cap = 1000000
-                        world.pops[selected_pos].farms += 2
-                        world.pops[selected_pos].ar += 4
-                        world.factions[popowner].wealth += -10000
-                        world.factions[popowner].wealthrate += 4
+                world.pops[selected_pos].build_city(world)
+                world_pad = refresh_pad(char_dict, col_dict, world)
+            paused = unpause(paused, calendar, stdscr)
+            world_pad = gen_world_pad(world)
+
+        # Establish a colony (s, e)
+        if k == 101:
+            world.col[selected_pos] = curses.color_pair(5)
+            selected = 0
+            world.pops[selected_pos].colonize(cursor_x, cursor_y, world, names.pop())
+            world_pad = refresh_pad(char_dict, col_dict, world)
             paused = unpause(paused, calendar, stdscr)
             world_pad = gen_world_pad(world)
 
         # Build a farm (s, f)
         if k == 102 and selected == 1:
-            if world.mat[cursor_y][cursor_x] not in (8,9):
-                world.col[selected_pos] = curses.color_pair(5)
-                selected = 0
-                world.col[selected_pos] = curses.color_pair(5)
-                world.pops[selected_pos].build_farm(cursor_x, cursor_y, world)
-                world_pad = refresh_pad(char_dict, col_dict, world)
-                paused = unpause(paused, calendar, stdscr)
-                world_pad = gen_world_pad(world)
+            world.col[selected_pos] = curses.color_pair(5)
+            selected = 0
+            world.col[selected_pos] = curses.color_pair(5)
+            world.pops[selected_pos].build_farm(cursor_x, cursor_y, world)
+            world_pad = refresh_pad(char_dict, col_dict, world)
+            paused = unpause(paused, calendar, stdscr)
+            world_pad = gen_world_pad(world)
 
         # Open menu (m)
         if k == 109:
@@ -358,6 +413,10 @@ def cosmogon(stdscr):
             for pop in world.factions[faction].pops:
                 size += int(world.pops[pop].size)
             world.factions[faction].size = size
+
+        # sort each faction's claimed cells
+        for faction in world.factions.keys():
+            world.factions[faction].cells.sort()
 
 #############################################################
 # Screen operations
@@ -391,6 +450,10 @@ def cosmogon(stdscr):
         factstr += ", wealth: "
         factstr += str(int(world.factions[mainfac].wealth))
         stdscr.addstr(1, 0, factstr)
+        claimedstr0 = " Domains: "
+        for cell in world.factions[mainfac].cells:
+            claimedstr0 += char_dict[cell] +" "
+        stdscr.addstr(2, 0, claimedstr0)
 
         # View information on the map
         view = " Viewing: {}, ".format(type_dict[world.mat[cursor_y,cursor_x]])
@@ -398,9 +461,9 @@ def cosmogon(stdscr):
             view += world.pops[(cursor_x,cursor_y)].name 
             view += " (" + world.pops[(cursor_x,cursor_y)].owner +")"
             view += ": "+ str(int(world.pops[(cursor_x,cursor_y)].size)) +" inhabitants."
-            claimedstr = " Claimed: "
-            for tile in world.pops[(cursor_x,cursor_y)].claimed:
-                claimedstr += char_dict[tile] +" "
+            claimedstr = " Claimed territories: "
+            for cell in world.pops[(cursor_x,cursor_y)].claimed:
+                claimedstr += char_dict[cell] +" "
             stdscr.addstr(height-8, 0, claimedstr)
 
         else:
