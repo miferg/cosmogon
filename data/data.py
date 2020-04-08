@@ -21,15 +21,15 @@ char_dict = {
         }
 
 type_dict = {
-    1: "water",
-    2: "river",
-    3: "plains",
-    4: "woods",
-    5: "mountains",
-    6: "farms",
-    7: "village",
-    8: "town",
-    9: "city",
+    1: "Water",
+    2: "River",
+    3: "Plains",
+    4: "Woods",
+    5: "Mountains",
+    6: "Farms",
+    7: "Village",
+    8: "Town",
+    9: "City",
         }
 
 testmat = numpy.array([
