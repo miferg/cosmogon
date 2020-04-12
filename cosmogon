@@ -7,72 +7,29 @@ github.com/miferg
 
 import curses
 import sys
-import time
 import random
 import data.data as data
+from data.network import Network
 from data.classes import *
+from data.functions import *
 
-def trace_cursor(k, cursor_y, cursor_x):
-    if k == 258:
-        cursor_y = cursor_y + 1
-    elif k == 336:
-        cursor_y = cursor_y + 5
-    elif k == 259:
-        cursor_y = cursor_y - 1
-    elif k == 337:
-        cursor_y = cursor_y - 5
-    elif k == 261:
-        cursor_x = cursor_x + 1
-    elif k == 402:
-        cursor_x = cursor_x + 5
-    elif k == 260:
-        cursor_x = cursor_x - 1
-    elif k == 393:
-        cursor_x = cursor_x - 5
-    return(cursor_y, cursor_x)
-
-def unpause(paused, calendar, stdscr):
-    # if paused, unpause
-    calendar.unpause()
-    stdscr.nodelay(True)
-    return 0
-
-def pause(paused, calendar, stdscr):
-    # if unpaused, pause
-    calendar.pause()
-    stdscr.nodelay(False)
-    return 1
-
-def gen_world_pad(source):  # used when the matrix changed
-    worldpad = curses.newpad(source.h+1, source.w+1)
-    for i in range(0, source.h):
-        for j in range(0, source.w):
-            worldpad.addstr(i, j, str(source.map[(j,i)]), source.col[(j,i)])
-    return(worldpad)
-
-def refresh_pad(char_dict, col_dict, world):
-     world.gen_map(char_dict)
-     world.gen_col(col_dict)
-     return gen_world_pad(world)
+################################################################################
+# Main function
 
 def cosmogon(stdscr):
 
+    stdscr.nodelay(True)
     k = 0
-    cursor_x = 0
-    cursor_y = 0
+    n = Network()
 
     # Clear and refresh the screen for a blank canvas
     stdscr.clear()
     stdscr.refresh()
+    stdscr.idcok(False)
+    stdscr.idlok(False)
 
     # Start colors in curses
-    curses.start_color()
-    curses.init_pair(1, curses.COLOR_BLUE, curses.COLOR_BLACK)
-    curses.init_pair(2, curses.COLOR_YELLOW, curses.COLOR_BLACK)
-    curses.init_pair(3, curses.COLOR_GREEN, curses.COLOR_BLACK)
-    curses.init_pair(4, curses.COLOR_BLACK, curses.COLOR_WHITE)
-    curses.init_pair(5, curses.COLOR_RED, curses.COLOR_BLACK)
-    curses.init_pair(6, curses.COLOR_BLACK, curses.COLOR_RED)
+    set_colors()
 
     col_dict = {
         1: curses.color_pair(1), # water ~
@@ -98,15 +55,32 @@ def cosmogon(stdscr):
     world.gen_map(char_dict)
     world.gen_col(col_dict)
     world_pad = gen_world_pad(world)
-
-    # World is paused
-    calendar = Calendar()
-    paused = 1
-    calendar.pause()
+    pheight, pwidth = world_pad.getmaxyx()
 
     # Initialize factions
-    mainame = names.pop()
-    world.factions[mainame] = Faction(mainame)
+    # local faction
+    p, calorigin = n.getP()
+    world.factions[p["name"]] = Faction(p["name"])
+
+    # remote factions
+    players = n.send(p)
+    for player in players:
+        if player != p:
+            world.factions[player["name"]] = Faction(player["name"])
+
+    # Start the calendar
+    calendar = Calendar()
+    calendar.origin = float(calorigin)
+
+    # Define the starting position
+    if p == players[0]:
+        wpshow = [0,0]
+        cursor_x = 0
+        cursor_y = 0
+    else:
+        wpshow = [pheight-12,pwidth-12]
+        cursor_x = pwidth-2
+        cursor_y = pheight-2
 
     # Start timer for growth and production
     grow_month = 1
@@ -115,39 +89,64 @@ def cosmogon(stdscr):
     # No settlements are currently selected
     selected = 0
 
-    # Loop where k is the last character pressed
+################################################################################
+# Main loop where k is the last character pressed
     while True:
 
-        stdscr.clear()
         height, width = stdscr.getmaxyx()
 
-#############################################################
+################################################################################
+# Network operations
+
+        # Send current player and recieve all players
+        players = n.send(p)
+
+        for player in players:
+            if player['name'] != p['name']:
+                if "b" in list(player.keys()): # Build the first settlement
+                    world.create_pop(world,player["b"][0],player["b"][1],player["b"][2],player["name"])
+                    del player["b"]
+                    world_pad = refresh_pad(char_dict, col_dict, world)
+                elif "f" in list(player.keys()): # Build a farm
+                    if world.factions[player['name']].wealth < world.pops[player["f"][0]].farmcost:
+                        world.factions[player['name']].wealth += world.pops[player["f"][0]].farmcost
+                    world.pops[player["f"][0]].build_farm(player["f"][1],player["f"][2],world)
+                    del player["f"]
+                    world_pad = refresh_pad(char_dict, col_dict, world)
+                    world_pad = gen_world_pad(world)
+                elif "c" in list(player.keys()): # Claim wilderness
+                    if world.factions[player['name']].wealth < world.pops[player["c"][0]].claimcost:
+                        world.factions[player['name']].wealth += world.pops[player["c"][0]].claimcost
+                    world.pops[player["c"][0]].claim(player["c"][1],player["c"][2], world)
+                    del player["c"]
+            else:
+                if "b" in list(player.keys()): # remove instruction Build the first settlement
+                    del p["b"]
+                elif "f" in list(player.keys()): # remove instruction Build a farm
+                    del p["f"]
+                elif "c" in list(player.keys()): # remove instruction Claim wilderness
+                    del p["c"]
+
+################################################################################
 # Input operations
 
-        # Pause and unpause (p)
-        if k == 112:
-            if paused == 1: 
-                paused = unpause(paused, calendar, stdscr) 
-            else:
-                paused = pause(paused, calendar, stdscr)
-
-        # Create the first settlement (b)
-        if k == 98 and paused ==1:
+        # Build the first settlement (b)
+        if k == 98:
             if (cursor_x,cursor_y) not in world.pops.keys():
-                world.create_pop(world, cursor_x,cursor_y, names.pop(), world.factions[mainame].name)
-                paused = unpause(paused, calendar, stdscr)
+                nwpopname = names.pop()
+                world.create_pop(world, cursor_x,cursor_y, nwpopname, p["name"])
+                p["b"] = (cursor_x, cursor_y, nwpopname)
                 world_pad = refresh_pad(char_dict, col_dict, world)
 
         # Select and deselect a settlement (s)
         if k == 115:
             if selected == 0 and  world.mat[cursor_y][cursor_x] in (7,8,9):
-                selected_pos = (cursor_x, cursor_y)
-                paused = pause(paused, calendar, stdscr)
-                world.col[(cursor_x, cursor_y)] = curses.color_pair(6)
-                world_pad = gen_world_pad(world)
-                selected = 1
+                if world.pops[(cursor_x, cursor_y)].owner == p["name"]:
+                    selected_pos = (cursor_x, cursor_y)
+                    world.col[(cursor_x, cursor_y)] = curses.color_pair(6)
+                    world_pad = gen_world_pad(world)
+                    selected = 1
             elif selected == 1:
-                paused = unpause(paused, calendar, stdscr)
                 world.col[selected_pos] = curses.color_pair(5)
                 world_pad = gen_world_pad(world)
                 selected = 0
@@ -157,7 +156,7 @@ def cosmogon(stdscr):
             world.col[selected_pos] = curses.color_pair(5)
             selected = 0
             world.pops[selected_pos].claim(cursor_x, cursor_y, world)
-            paused = unpause(paused, calendar, stdscr)
+            p["c"] = (selected_pos, cursor_x, cursor_y)
             world_pad = gen_world_pad(world)
         
         # Expand a settlement (s, b)
@@ -173,7 +172,6 @@ def cosmogon(stdscr):
             elif world.mat[selected_pos[1]][selected_pos[0]] == 8:
                 world.pops[selected_pos].build_city(world)
                 world_pad = refresh_pad(char_dict, col_dict, world)
-            paused = unpause(paused, calendar, stdscr)
             world_pad = gen_world_pad(world)
 
         # Establish a colony (s, e)
@@ -182,31 +180,28 @@ def cosmogon(stdscr):
             selected = 0
             world.pops[selected_pos].colonize(cursor_x, cursor_y, world, names.pop())
             world_pad = refresh_pad(char_dict, col_dict, world)
-            paused = unpause(paused, calendar, stdscr)
             world_pad = gen_world_pad(world)
 
         # Build a farm (s, f)
         if k == 102 and selected == 1:
             world.col[selected_pos] = curses.color_pair(5)
             selected = 0
-            world.col[selected_pos] = curses.color_pair(5)
             world.pops[selected_pos].build_farm(cursor_x, cursor_y, world)
+            p["f"] = (selected_pos, cursor_x, cursor_y)
             world_pad = refresh_pad(char_dict, col_dict, world)
-            paused = unpause(paused, calendar, stdscr)
             world_pad = gen_world_pad(world)
 
         # Open menu (m)
         if k == 109:
             menu_pad = curses.newpad(10, 60)
             menu_pad.refresh( 0,0, 5,5, height-5,width-20)
-            paused = pause(paused, calendar, stdscr)
 
         # Quit to menu (q)
         if k == 113:
             #main_menu(stdscr)
             sys.exit()
 
-#############################################################
+################################################################################
 # Automatic operations
 
         # Make the pops and riches grow
@@ -234,41 +229,51 @@ def cosmogon(stdscr):
         for faction in world.factions.keys():
             world.factions[faction].cells.sort()
 
-#############################################################
+################################################################################
 # Screen operations
 
         # Initialization
         curses.curs_set(True)
-        curses.napms(41)
-        stdscr.clear()
+        curses.napms(41) #41
+        stdscr.erase()
         height, width = stdscr.getmaxyx()
 
         # The cursor will be moving in the pad
-        pheight, pwidth = world_pad.getmaxyx()
         cursor_y, cursor_x = trace_cursor(k, cursor_y, cursor_x)
         cursor_x = max(0, cursor_x)
         cursor_x = min(pwidth-2, cursor_x)
         cursor_y = max(0, cursor_y)
         cursor_y = min(pheight-2, cursor_y)
 
+        # Scroll the world pad
+        if cursor_y <= wpshow[0]-1:
+            wpshow[0] = cursor_y
+        elif cursor_y >= wpshow[0]+11:
+            wpshow[0] = cursor_y-10
+        if cursor_x <= wpshow[1]-1:
+            wpshow[1] = cursor_x
+        elif cursor_x >= wpshow[1]+11:
+            wpshow[1] = cursor_x-10
+
         # Update and print date
+        calendar.update()
         calstr = str(calendar)
-        if paused == 0:
-            calendar.update()
-        datstr = " "+ world.name +", "+ calstr
+        datstr = "╣ "+ p["name"] +", "+ calstr +" ╠"
         centpos = int((width // 2) - (len(datstr) // 2) - len(datstr) % 2)
         stdscr.addstr(0, centpos, datstr, curses.color_pair(5))
 
         # View faction data
         mainfac = list(world.factions.keys())[0]
-        factstr = " "+ mainfac +", size: "
+        factstr = " ║ Size: "
         factstr += str(int(world.factions[mainfac].size))
-        factstr += ", wealth: "
+        factstr += " ║ Wealth: "
         factstr += str(int(world.factions[mainfac].wealth))
+        factstr += " ║"
         stdscr.addstr(1, 0, factstr)
-        claimedstr0 = " Domains: "
+        claimedstr0 = " ║ Domains: "
         for cell in world.factions[mainfac].cells:
             claimedstr0 += char_dict[cell] +" "
+        claimedstr0 += "║"
         stdscr.addstr(2, 0, claimedstr0)
 
         # View information on the map
@@ -277,22 +282,26 @@ def cosmogon(stdscr):
             view += world.pops[(cursor_x,cursor_y)].name 
             view += " (" + world.pops[(cursor_x,cursor_y)].owner +")"
             view += ": "+ str(int(world.pops[(cursor_x,cursor_y)].size)) +" inhabitants."
-            view += " Food: "+ str(int(world.pops[(cursor_x,cursor_y)].food))
+            stdscr.addstr(height-9, 0, view)
+            view = " Food: "+ str(int(world.pops[(cursor_x,cursor_y)].food))
+            stdscr.addstr(height-8, 0, view)
             claimedstr = " Claimed territories: "
             for cell in world.pops[(cursor_x,cursor_y)].claimed:
                 claimedstr += char_dict[cell] +" "
-            stdscr.addstr(height-8, 0, claimedstr)
+            stdscr.addstr(height-7, 0, claimedstr)
 
         else:
             view += 'unpopulated.'
-        stdscr.addstr(height-9, 0, view)
+            stdscr.addstr(height-9, 0, view)
 
         # Render status bar
-        if paused == 0:
-            statusbarstr = " Quit 'q' | Pause 'p' | Last: {} Pos: {}, {}"
-        else:
-            statusbarstr = " Quit 'q' | Unpause 'p' | Last: {} Pos: {}, {}"
-        statusbarstr = statusbarstr.format(k , cursor_y, cursor_x)
+        playernames = []
+        for player in players:
+            playernames.append(player['name']) 
+        #statusbarstr = " ║ Quit 'q' ║ "+ ' ╦ '.join(playernames) +" ║ Last: {} Pos: {}, {} ║"
+        #statusbarstr = statusbarstr.format(k , cursor_y, cursor_x)
+        statusbarstr = " ║ Quit 'q' ║ "+ ' ╦ '.join(playernames) +" ║ Pos: {}, {} ║"
+        statusbarstr = statusbarstr.format(cursor_y, cursor_x)
         stdscr.attron(curses.color_pair(4))
         stdscr.addstr(height-1, 0, statusbarstr)
         stdscr.addstr(height-1, len(statusbarstr), " " * (width - len(statusbarstr) - 1))
@@ -305,10 +314,14 @@ def cosmogon(stdscr):
         stdscr.refresh()
 
         # Refresh the world
-        world_pad.refresh( 0,0, 6,5, height-14,width-5)
+        #world_pad.refresh( 0,0, 6,5, height-14,width-5)
+        world_pad.refresh(wpshow[0],wpshow[1],6,5,16,15)
 
         # Get next input
         k = stdscr.getch()
+
+################################################################################
+# Main menu
 
 def main_menu(stdscr):
 
@@ -394,6 +407,8 @@ def main_menu(stdscr):
         # Wait for next input
         k = stdscr.getch()
 
+################################################################################
+# Begin
 
 def main():
     #curses.wrapper(main_menu)

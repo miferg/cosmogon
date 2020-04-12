@@ -1,32 +1,31 @@
+#! /usr/bin/python3
+"""
+Class definitions for cosmogon to work.
+"""
+
 import time
 
-class Calendar(object):
+################################################################################
 
+class Calendar(object):
     def __init__(self):
         self.month = 0
         self.year = 0
-        self.origin = time.perf_counter()
-        self.pausetime = 0
-        self.pauseinit = 0
+        self.origin = 0
 
     def __str__(self):
         return "Year: {}, Month: {}".format(self.year, self.month + 1)
 
     def update(self):
-        change = time.perf_counter() - self.origin - self.pausetime
+        change = time.perf_counter() - self.origin
         # month duration in seconds
         dur = 1
         self.year = int(change // (12 * dur))
         self.month = int((change % (12 * dur)) // dur)
 
-    def pause(self):
-        self.pauseinit = time.perf_counter()
-
-    def unpause(self):
-        self.pausetime += time.perf_counter() - self.pauseinit
+################################################################################
 
 class World(object):
-
     def __init__(self, name, h, w):
         self.name = name
         self.mat = "" #numpy.random.randint(1,size=(h,w)) + 1
@@ -64,8 +63,9 @@ class World(object):
                 self.factions[owner].wealthrate += 1
                 self.factions[owner].startpop = 0
 
-class Population(object):
+################################################################################
 
+class Population(object):
     def __init__(self, name, owner, x, y):
         self.name = name
         self.size = 1000
@@ -183,8 +183,9 @@ class Population(object):
                 if self.influence[other] > self.influence[owner]:
                     self.owner = other
 
-class Faction(object):
+################################################################################
 
+class Faction(object):
     def __init__(self, name):
         self.name = name
         self.size = 0
@@ -205,3 +206,4 @@ class Faction(object):
 
     def get_wealth(self):
         self.wealth = self.wealth + self.wealthrate
+
