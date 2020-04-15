@@ -44,6 +44,11 @@ def refresh_pad(char_dict, col_dict, world):
 
 ################################################################################
 
+def local_refresh_pad(location, char_dict, col_dict, world):
+    pass
+
+################################################################################
+
 def set_colors():
     curses.start_color()
     curses.init_pair(1, curses.COLOR_BLUE, curses.COLOR_BLACK)
@@ -52,3 +57,17 @@ def set_colors():
     curses.init_pair(4, curses.COLOR_BLACK, curses.COLOR_WHITE)
     curses.init_pair(5, curses.COLOR_RED, curses.COLOR_BLACK)
     curses.init_pair(6, curses.COLOR_BLACK, curses.COLOR_RED)
+
+    col_dict = {
+        1: curses.color_pair(1), # water ~
+        2: curses.color_pair(1), # river ╬
+        3: curses.color_pair(2), # plains ░
+        4: curses.color_pair(3), # forest ¶
+        5: curses.color_pair(4), # mountain ^
+        6: curses.color_pair(2), # farms #
+        7: curses.color_pair(5), # village ᵃ
+        8: curses.color_pair(5), # town a
+        9: curses.color_pair(5), # city A
+        }
+
+    return col_dict
