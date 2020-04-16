@@ -2,7 +2,7 @@
 
 import socket
 from _thread import *
-import pickle
+import json
 from data import names
 import random
 import time
@@ -32,11 +32,12 @@ players = [player1,player2]
 calorigin = time.perf_counter()
 
 def threaded_client(conn, player):
-    conn.send(pickle.dumps((players[player],str(calorigin))))
+    #print(json.dumps((players[player],str(calorigin))).encode())
+    conn.send(json.dumps((players[player],str(calorigin))).encode())
     reply = ""
     while True:
         try:
-            data = pickle.loads(conn.recv(16000))
+            data = json.loads(conn.recv(16000))
             players[player] = data
 
             if not data:
@@ -47,7 +48,7 @@ def threaded_client(conn, player):
                 #print("Received: ", data)
                 #print("Sending : ", reply)
             
-            conn.sendall(pickle.dumps(reply))
+            conn.sendall(json.dumps(reply).encode())
         except:
             break
 

@@ -1,7 +1,7 @@
 #! /usr/bin/python3
 
 import socket
-import pickle
+import json
 import sys
 
 server_ip = open('data/server_ip').read()[:-1]
@@ -20,14 +20,14 @@ class Network:
     def connect(self):
         try:
             self.client.connect(self.addr)
-            return pickle.loads(self.client.recv(16000))
+            return json.loads(self.client.recv(16000))
         except:
             pass
 
     def send(self, data):
         try:
-            self.client.send(pickle.dumps(data))
-            return pickle.loads(self.client.recv(16000))
+            self.client.send(json.dumps(data).encode())
+            return json.loads(self.client.recv(16000))
         except socket.error as e:
             print(e)
 

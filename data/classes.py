@@ -19,7 +19,7 @@ class Calendar(object):
     def update(self):
         change = time.perf_counter() - self.origin
         # month duration in seconds
-        dur = 1
+        dur = 0.5
         self.year = int(change // (12 * dur))
         self.month = int((change % (12 * dur)) // dur)
 
@@ -36,6 +36,8 @@ class World(object):
         self.col = {}
         self.factions = {}
         self.poplist = []
+        self.pad = False
+        self.forts = {}
 
     def __str__(self):
         return name
@@ -62,6 +64,35 @@ class World(object):
                 self.factions[owner].pops.append((x,y))
                 self.factions[owner].wealthrate += 1
                 self.factions[owner].startpop = 0
+                self.factions[owner].settlements.append('ᵃ')
+
+################################################################################
+
+class Faction(object):
+    def __init__(self, name):
+        self.name = name
+        self.size = 0
+        self.knowfor = 0
+        self.workfor = 0
+        self.warfor = 0
+        self.wealth = 0
+        self.pops =[]
+        self.wealthrate = 0
+        self.startpop = 1
+        self.availpops = 0
+        self.availcities = 1
+        self.availtowns = 3
+        self.cells = []
+        self.settlements = []
+        self.fortifications = []
+        self.availfortresses = 1
+        self.fortresscost = 10000
+
+    def __srt__(self):
+        return self.name +", "+ str(self.size) +" inhabitants."
+
+    def get_wealth(self):
+        self.wealth = self.wealth + self.wealthrate
 
 ################################################################################
 
@@ -74,7 +105,7 @@ class Population(object):
         self.influence = {self.owner:100}
         self.cap = 10000
         self.farms = 2
-        self.farmcost = 100
+        self.farmcost = 50
         self.pos_x = x
         self.pos_y = y
         self.claimslots = 2
@@ -85,6 +116,8 @@ class Population(object):
         self.colonizecost = 1000
         self.food = 1
         self.foodprod = 0
+        self.fortcost = 1500
+        self.availforts = 1
 
     def grow(self):
         self.size = self.size + (self.size*self.growth*((self.cap-self.size)/self.cap))
@@ -114,6 +147,8 @@ class Population(object):
                         world.factions[self.owner].wealthrate += 2
                         world.factions[self.owner].availtowns += -1
                         world.factions[self.owner].availpops += 2
+                        world.factions[self.owner].settlements.remove('ᵃ')
+                        world.factions[self.owner].settlements.append('a')
 
     def build_city(self, world):
         if world.factions[self.owner].wealth >= 10000:
@@ -129,6 +164,8 @@ class Population(object):
                         world.factions[self.owner].wealth += -10000
                         world.factions[self.owner].wealthrate += 4
                         world.factions[self.owner].availcities += -1
+                        world.factions[self.owner].settlements.remove('a')
+                        world.factions[self.owner].settlements.append('A')
 
     def colonize(self, x, y, world, name):
         if self.pos_x + self.ar+3 >= x >= self.pos_x - self.ar-3:
@@ -144,8 +181,41 @@ class Population(object):
                                 world.factions[self.owner].availpops += -1
                                 world.factions[self.owner].wealthrate += 1
                                 world.factions[self.owner].wealth += -self.colonizecost
+                                world.factions[self.owner].settlements.append('ᵃ')
                                 self.colonizecost = self.colonizecost*2
                                 self.size = self.size - 2000
+
+    def build_fort(self, x, y, world):
+        if self.pos_x + self.ar+4 >= x >= self.pos_x - self.ar-4:
+            if self.pos_y + self.ar+4 >= y >= self.pos_y - self.ar-4:
+                if world.factions[self.owner].wealth >= self.fortcost:
+                    if self.availforts > 0:
+                        if world.mat[y][x] in (3, 4, 5):
+                            if self.size >= 10000:
+                                world.forts[(x,y)] = Fortification(self.owner, x, y)
+                                world.mat[y][x] = 10
+                                world.factions[self.owner].fortifications.append((x,y))
+                                world.factions[self.owner].wealthrate += -0.5
+                                world.factions[self.owner].wealth += -self.fortcost
+                                world.factions[self.owner].settlements.append('ø')
+                                self.availforts += -1
+                                self.size = self.size - 2000
+
+    def upgrade_fort(self, x, y, world):
+        if world.factions[self.owner].wealth >= world.factions[self.owner].fortresscost:
+            if world.factions[self.owner].availfortresses > 0:
+                if world.mat[y][x] == 10:
+                    if self.size >= 100000:
+                        world.mat[y][x] = 11
+                        world.forts[(x,y)].cap = 15000
+                        world.forts[(x,y)].mr += 4
+                        world.forts[(x,y)].size += 9000
+                        world.factions[self.owner].wealthrate += -1
+                        world.factions[self.owner].wealth += -world.factions[self.owner].fortresscost
+                        world.factions[self.owner].settlements.remove('ø')
+                        world.factions[self.owner].settlements.append('Ø')
+                        world.factions[self.owner].availfortresses += -1
+                        self.size = self.size - 20000
 
     def build_farm(self, x, y, world):
         if self.farms > 0 and world.factions[self.owner].wealth >= self.farmcost:
@@ -185,25 +255,16 @@ class Population(object):
 
 ################################################################################
 
-class Faction(object):
-    def __init__(self, name):
-        self.name = name
-        self.size = 0
-        self.knowfor = 0
-        self.workfor = 0
-        self.warfor = 0
-        self.wealth = 0
-        self.pops =[]
-        self.wealthrate = 0
-        self.startpop = 1
-        self.availpops = 0
-        self.availcities = 1
-        self.availtowns = 3
-        self.cells = []
+class Fortification(object):
+    def __init__(self, owner, x, y):
+        self.size = 1000
+        self.owner = owner
+        self.influence = {self.owner:100}
+        self.cap = 3000
+        self.pos_x = x
+        self.pos_y = y
+        self.mr = 4  # manuveur range
 
-    def __srt__(self):
-        return self.name +", "+ str(self.size) +" inhabitants."
 
-    def get_wealth(self):
-        self.wealth = self.wealth + self.wealthrate
+
 

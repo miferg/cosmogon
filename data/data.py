@@ -18,6 +18,8 @@ char_dict = {
     7: "ª",
     8: "a",
     9: "A",
+    10: "ø",
+    11: "Ø",
         }
 
 type_dict = {
@@ -30,6 +32,8 @@ type_dict = {
     7: "Village",
     8: "Town",
     9: "City",
+    10: "Fort",
+    11: "Fortress",
         }
 
 testmat = numpy.array([
