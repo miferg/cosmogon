@@ -95,37 +95,44 @@ def cosmogon(stdscr):
 
                 if "b" in list(player.keys()): # Build the first settlement
                     world.create_pop(world,player["b"][0],player["b"][1],player["b"][2],player["name"])
-                    local_refresh_pad(player["b"][0],player["b"][1],char_dict,col_dict,world)
+                    if (player["b"][0],player["b"][1]) in world.revealed:
+                        local_refresh_pad(player["b"][0],player["b"][1],char_dict,col_dict,world)
                     del player["b"]
 
                 elif "bt" in list(player.keys()): # Build a town
                     world.pops[tuple(player["bt"])].build_town(world)
-                    local_refresh_pad(world.pops[tuple(player["bt"])].pos_x,world.pops[tuple(player["bt"])].pos_y,char_dict,col_dict,world)
+                    if tuple(player["bt"]) in world.revealed:
+                        local_refresh_pad(player["bt"][0],player["bt"][1],char_dict,col_dict,world)
                     del player["bt"]
 
                 elif "bc" in list(player.keys()): # Build a city
                     world.pops[tuple(player["bc"])].build_city(world)
-                    local_refresh_pad(world.pops[tuple(player["bc"])].pos_x,world.pops[tuple(player["bc"])].pos_y,char_dict,col_dict,world)
+                    if tuple(player["bc"]) in world.revealed:
+                        local_refresh_pad(player["bc"][0],player["bc"][1],char_dict,col_dict,world)
                     del player["bc"]
 
                 elif "e" in list(player.keys()): # Establish a colony
                     world.pops[tuple(player["e"][0])].colonize(player["e"][1],player["e"][2],world,player["e"][3])
-                    local_refresh_pad(player["e"][1],player["e"][2],char_dict,col_dict,world)
+                    if (player["e"][1],player["e"][2]) in world.revealed:
+                        local_refresh_pad(player["e"][1],player["e"][2],char_dict,col_dict,world)
                     del player["e"]
 
                 elif "o" in list(player.keys()): # Build a fort
                     world.pops[tuple(player["o"][0])].build_fort(player["o"][1],player["o"][2],world)
-                    local_refresh_pad(player["o"][1],player["o"][2],char_dict,col_dict,world)
+                    if (player["o"][1],player["o"][2]) in world.revealed:
+                        local_refresh_pad(player["o"][1],player["o"][2],char_dict,col_dict,world)
                     del player["o"]
 
                 elif "uo" in list(player.keys()): # Upgrade a fort
                     world.pops[tuple(player["uo"][0])].upgrade_fort(player["uo"][1],player["uo"][2],world)
-                    local_refresh_pad(player["uo"][1],player["uo"][2],char_dict,col_dict,world)
+                    if (player["uo"][1],player["uo"][2]) in world.revealed:
+                        local_refresh_pad(player["uo"][1],player["uo"][2],char_dict,col_dict,world)
                     del player["uo"]
 
                 elif "f" in list(player.keys()): # Build a farm
                     world.pops[tuple(player["f"][0])].build_farm(player["f"][1],player["f"][2],world)
-                    local_refresh_pad(player["f"][1],player["f"][2],char_dict,col_dict,world)
+                    if (player["f"][1],player["f"][2]) in world.revealed:
+                        local_refresh_pad(player["f"][1],player["f"][2],char_dict,col_dict,world)
                     del player["f"]
 
                 elif "c" in list(player.keys()): # Claim wilderness
@@ -158,95 +165,123 @@ def cosmogon(stdscr):
 
         # Build the first settlement (b)
         if k == 98:
-            if (cursor_x,cursor_y) not in world.pops.keys():
-                nwpopname = names.pop()
-                world.create_pop(world, cursor_x,cursor_y, nwpopname, p["name"])
-                local_refresh_pad(cursor_x, cursor_y, char_dict, col_dict, world)
-                p["b"] = (cursor_x, cursor_y, nwpopname)
-                timer = 5
+            if world.factions[p["name"]].startpop != 0:
+                if (cursor_x,cursor_y) not in world.pops.keys():
+                    nwpopname = names.pop()
+                    world.create_pop(world, cursor_x,cursor_y, nwpopname, p["name"])
+                    world.pad = drop_fog(world)
+                    local_refresh_pad(cursor_x, cursor_y, char_dict, col_dict, world)
+                    world.revealed.append((cursor_x,cursor_y))
+                    surroundlist = surrounding(cursor_x, cursor_y)
+                    for pair in surroundlist:
+                        local_refresh_pad(pair[0], pair[1], char_dict, col_dict, world)
+                        world.revealed.append((pair[0], pair[1]))
+                    p["b"] = (cursor_x, cursor_y, nwpopname)
+                    timer = 5
 
         # Select and deselect a settlement (s)
         if k == 115:
-            if selected == 0 and  world.mat[cursor_y][cursor_x] in (7,8,9):
-                if world.pops[(cursor_x, cursor_y)].owner == p["name"]:
-                    selected_pos = (cursor_x, cursor_y)
-                    world.pad.addstr(cursor_y, cursor_x, str(world.map[(cursor_x,cursor_y)]), curses.color_pair(6))
+            # Select a settlement
+            if selected == 0 and (cursor_x, cursor_y) in world.factions[p["name"]].pops:
+                selected_pos = (cursor_x, cursor_y)
+                world.pad.addstr(cursor_y, cursor_x, str(world.map[(cursor_x,cursor_y)]), curses.color_pair(6))
+                selected = 1
+            # Select last selected settlement
+            elif 'selected_pos' in locals() and selected == 0:
+                if (cursor_x, cursor_y) not in world.factions[p["name"]].pops:
+                    world.pad.addstr(selected_pos[1],selected_pos[0],str(world.map[selected_pos]), curses.color_pair(6))
                     selected = 1
+            # Deselect settlement
             elif selected == 1:
                 world.pad.addstr(selected_pos[1],selected_pos[0],str(world.map[selected_pos]), curses.color_pair(5))
                 selected = 0
 
-        # Claim wilderness (s, c)
-        if k == 99 and selected == 1:
+        # Explore tile (s, x)
+        if k == 120 and selected == 1:
             selected = 0
-            world.pops[selected_pos].claim(cursor_x, cursor_y, world)
-            world.pad.addstr(selected_pos[1],selected_pos[0],str(world.map[selected_pos]), curses.color_pair(5))
-            p["c"] = (selected_pos, cursor_x, cursor_y)
-            timer = 5
+            diffx = abs(cursor_x-selected_pos[0])
+            diffy = abs(cursor_y-selected_pos[1])
+            if world.factions[world.pops[selected_pos].owner].wealth >= 10*(diffx+diffy):
+                if world.pops[selected_pos].size >= 10*(diffx+diffy):
+                    world.pad.addstr(selected_pos[1],selected_pos[0],str(world.map[selected_pos]), curses.color_pair(5))
+                    local_refresh_pad(cursor_x, cursor_y, char_dict, col_dict, world)
+                    world.revealed.append((cursor_x,cursor_y))
+                    world.factions[world.pops[selected_pos].owner].wealth += -10*(diffx+diffy)
+                    world.pops[selected_pos].size += -10*(diffx+diffy)
+
+        # Applicable functions to charted world
+        if (cursor_x,cursor_y) in world.revealed:
+
+            # Claim wilderness (s, c)
+            if k == 99 and selected == 1:
+                selected = 0
+                world.pops[selected_pos].claim(cursor_x, cursor_y, world)
+                world.pad.addstr(selected_pos[1],selected_pos[0],str(world.map[selected_pos]), curses.color_pair(5))
+                p["c"] = (selected_pos, cursor_x, cursor_y)
+                timer = 5
         
-        # Expand a settlement (s, b)
-        if k == 98 and selected == 1:
-            selected = 0
-            popowner =  world.pops[selected_pos].owner
-            # Build town
-            if world.mat[selected_pos[1]][selected_pos[0]] == 7:
-                world.pops[selected_pos].build_town(world)
-                local_refresh_pad(selected_pos[0],selected_pos[1],char_dict, col_dict, world)
-                world.factions[mainfac].settlements.sort()
-                p["bt"] = selected_pos
-                timer = 5
-            # Build city
-            elif world.mat[selected_pos[1]][selected_pos[0]] == 8:
-                world.pops[selected_pos].build_city(world)
-                local_refresh_pad(selected_pos[0],selected_pos[1],char_dict, col_dict, world)
-                world.factions[mainfac].settlements.sort()
-                p["bc"] = selected_pos
-                timer = 5
+            # Expand a settlement (s, b)
+            if k == 98 and selected == 1:
+                selected = 0
+                popowner =  world.pops[selected_pos].owner
+                # Build town
+                if world.mat[selected_pos[1]][selected_pos[0]] == 7:
+                    world.pops[selected_pos].build_town(world)
+                    local_refresh_pad(selected_pos[0],selected_pos[1],char_dict, col_dict, world)
+                    world.factions[mainfac].settlements.sort()
+                    p["bt"] = selected_pos
+                    timer = 5
+                # Build city
+                elif world.mat[selected_pos[1]][selected_pos[0]] == 8:
+                    world.pops[selected_pos].build_city(world)
+                    local_refresh_pad(selected_pos[0],selected_pos[1],char_dict, col_dict, world)
+                    world.factions[mainfac].settlements.sort()
+                    p["bc"] = selected_pos
+                    timer = 5
+                world.pad.addstr(selected_pos[1],selected_pos[0],str(world.map[selected_pos]), curses.color_pair(5))
 
-            world.pad.addstr(selected_pos[1],selected_pos[0],str(world.map[selected_pos]), curses.color_pair(5))
-
-        # Establish a colony (s, e)
-        if k == 101:
-            selected = 0
-            nwpopname = names.pop()
-            world.pops[selected_pos].colonize(cursor_x, cursor_y, world, nwpopname)
-            local_refresh_pad(cursor_x, cursor_y, char_dict, col_dict, world)
-            world.pad.addstr(selected_pos[1],selected_pos[0],str(world.map[selected_pos]), curses.color_pair(5))
-            world.factions[mainfac].settlements.sort()
-            p["e"] = (selected_pos,cursor_x,cursor_y,nwpopname)
-            timer = 5
-
-        # Build a fort (s, o)
-        if k == 111:
-            selected = 0
-            world.pops[selected_pos].build_fort(cursor_x, cursor_y, world)
-            local_refresh_pad(cursor_x, cursor_y, char_dict, col_dict, world)
-            world.pad.addstr(selected_pos[1],selected_pos[0],str(world.map[selected_pos]), curses.color_pair(5))
-            world.factions[mainfac].settlements.sort()
-            p["o"] = (selected_pos,cursor_x,cursor_y)
-            timer = 5
-
-        # Upgrade a fort (s, o)
-        if k == 111:
-            selected = 0
-            if world.mat[cursor_y][cursor_x] == 10:
-                world.pops[selected_pos].upgrade_fort(cursor_x, cursor_y, world)
+            # Establish a colony (s, e)
+            if k == 101:
+                selected = 0
+                nwpopname = names.pop()
+                world.pops[selected_pos].colonize(cursor_x, cursor_y, world, nwpopname)
                 local_refresh_pad(cursor_x, cursor_y, char_dict, col_dict, world)
                 world.pad.addstr(selected_pos[1],selected_pos[0],str(world.map[selected_pos]), curses.color_pair(5))
                 world.factions[mainfac].settlements.sort()
-                p["uo"] = (selected_pos,cursor_x,cursor_y)
+                p["e"] = (selected_pos,cursor_x,cursor_y,nwpopname)
+                timer = 5
+     
+            # Build a fort (s, o)
+            if k == 111:
+                selected = 0
+                world.pops[selected_pos].build_fort(cursor_x, cursor_y, world)
+                local_refresh_pad(cursor_x, cursor_y, char_dict, col_dict, world)
+                world.pad.addstr(selected_pos[1],selected_pos[0],str(world.map[selected_pos]), curses.color_pair(5))
+                world.factions[mainfac].settlements.sort()
+                p["o"] = (selected_pos,cursor_x,cursor_y)
                 timer = 5
 
-        # Build a farm (s, f)
-        if k == 102 and selected == 1:
-            selected = 0
-            world.pops[selected_pos].build_farm(cursor_x, cursor_y, world)
-            local_refresh_pad(cursor_x, cursor_y, char_dict, col_dict, world)
-            world.pad.addstr(selected_pos[1],selected_pos[0],str(world.map[selected_pos]), curses.color_pair(5))
-            p["f"] = (selected_pos, cursor_x, cursor_y)
-            timer = 5
+            # Upgrade a fort (s, o)
+            if k == 111:
+                selected = 0
+                if world.mat[cursor_y][cursor_x] == 10:
+                    world.pops[selected_pos].upgrade_fort(cursor_x, cursor_y, world)
+                    local_refresh_pad(cursor_x, cursor_y, char_dict, col_dict, world)
+                    world.pad.addstr(selected_pos[1],selected_pos[0],str(world.map[selected_pos]), curses.color_pair(5))
+                    world.factions[mainfac].settlements.sort()
+                    p["uo"] = (selected_pos,cursor_x,cursor_y)
+                    timer = 5
 
-        # Open menu (m)
+             # Build a farm (s, f)
+            if k == 102 and selected == 1:
+                selected = 0
+                world.pops[selected_pos].build_farm(cursor_x, cursor_y, world)
+                local_refresh_pad(cursor_x, cursor_y, char_dict, col_dict, world)
+                world.pad.addstr(selected_pos[1],selected_pos[0],str(world.map[selected_pos]), curses.color_pair(5))
+                p["f"] = (selected_pos, cursor_x, cursor_y)
+                timer = 5
+
+         # Open menu (m)
         if k == 109:
             menu_pad = curses.newpad(10, 60)
             menu_pad.refresh( 0,0, 5,5, height-5,width-20)
@@ -336,27 +371,33 @@ def cosmogon(stdscr):
         stdscr.addstr(3, 0, claimedstr0)
 
         # View information on the map
-        view = " "+ type_dict[world.mat[cursor_y,cursor_x]]
-        if (cursor_x,cursor_y) in world.pops.keys():
-            view += ", "+ world.pops[(cursor_x,cursor_y)].name 
-            view += " (" + world.pops[(cursor_x,cursor_y)].owner +")"
-            view += ": "+ str(int(world.pops[(cursor_x,cursor_y)].size)) +" inhabitants."
-            stdscr.addstr(height-8, 0, view)
-            view = " Food: "+ str(int(world.pops[(cursor_x,cursor_y)].food))
-            stdscr.addstr(height-7, 0, view)
-            claimedstr = " Claimed territories: "
-            for cell in world.pops[(cursor_x,cursor_y)].claimed:
-                claimedstr += char_dict[cell] +" "
-            stdscr.addstr(height-6, 0, claimedstr)
+        if (cursor_x,cursor_y) in world.revealed:
+            view = " "+ type_dict[world.mat[cursor_y,cursor_x]]
+            if (cursor_x,cursor_y) in world.pops.keys():
+                view += ", "+ world.pops[(cursor_x,cursor_y)].name 
+                view += " (" + world.pops[(cursor_x,cursor_y)].owner +")"
+                view += ": "+ str(int(world.pops[(cursor_x,cursor_y)].size)) +" inhabitants."
+                stdscr.addstr(height-8, 0, view)
+                view = " Food: "+ str(int(world.pops[(cursor_x,cursor_y)].food))
+                stdscr.addstr(height-7, 0, view)
+                claimedstr = " Claimed territories: "
+                for cell in world.pops[(cursor_x,cursor_y)].claimed:
+                    claimedstr += char_dict[cell] +" "
+                stdscr.addstr(height-6, 0, claimedstr)
 
-        elif (cursor_x,cursor_y) in world.forts.keys(): 
-            view += " (" + world.forts[(cursor_x,cursor_y)].owner +")"
-            view += ": "+ str(int(world.forts[(cursor_x,cursor_y)].size)) +" strong."
-            stdscr.addstr(height-8, 0, view)
+            elif (cursor_x,cursor_y) in world.forts.keys(): 
+                view += " (" + world.forts[(cursor_x,cursor_y)].owner +")"
+                view += ": "+ str(int(world.forts[(cursor_x,cursor_y)].size)) +" strong."
+                stdscr.addstr(height-8, 0, view)
+
+            else:
+                view += ", unpopulated."
+                stdscr.addstr(height-8, 0, view)
 
         else:
-            view += ", unpopulated."
+            view = " Uncharted."
             stdscr.addstr(height-8, 0, view)
+
 
         # Render status bar
         playernames = []
@@ -364,7 +405,7 @@ def cosmogon(stdscr):
             playernames.append(player['name']) 
         #statusbarstr = " ║ Quit 'q' ║ "+ ' ╦ '.join(playernames) +" ║ Last: {} Pos: {}, {} ║"
         #statusbarstr = statusbarstr.format(k , cursor_y, cursor_x)
-        statusbarstr = " ║ Quit 'q' ║ "+ ' ╦ '.join(playernames) +" ║ Pos: {}, {} ║"
+        statusbarstr = " Quit 'q' ║ "+ ' ╦ '.join(playernames) +" ║ Pos: {}, {}"
         statusbarstr = statusbarstr.format(cursor_y, cursor_x)
         stdscr.attron(curses.color_pair(4))
         stdscr.addstr(height-1, 0, statusbarstr)

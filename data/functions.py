@@ -37,6 +37,21 @@ def gen_world_pad(world):  # used when the matrix changed
 
 ################################################################################
 
+def drop_fog(world):  # darken the map
+    worldpad = curses.newpad(world.h+1, world.w+1)
+    for i in range(0, world.h):
+        for j in range(0, world.w):
+            worldpad.addstr(i, j, str("·"),curses.color_pair(7))
+    return(worldpad)
+
+################################################################################
+
+def surrounding(x, y):
+    srlist = [(x-1,y-1),(x,y-1),(x+1,y-1),(x-1,y),(x+1,y),(x-1,y+1),(x,y+1),(x+1,y+1)]
+    return srlist
+
+################################################################################
+
 def refresh_pad(char_dict, col_dict, world):
      world.gen_map(char_dict)
      world.gen_col(col_dict)

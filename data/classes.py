@@ -38,6 +38,7 @@ class World(object):
         self.poplist = []
         self.pad = False
         self.forts = {}
+        self.revealed = []
 
     def __str__(self):
         return name
