@@ -38,7 +38,6 @@ class World(object):
         self.poplist = []
         self.pad = False
         self.forts = {}
-        self.revealed = []
 
     def __str__(self):
         return name
@@ -66,6 +65,7 @@ class World(object):
                 self.factions[owner].wealthrate += 1
                 self.factions[owner].startpop = 0
                 self.factions[owner].settlements.append('ᵃ')
+                self.factions[owner].explored += [(x-1,y-1),(x,y-1),(x+1,y-1),(x-1,y),(x,y),(x+1,y),(x-1,y+1),(x,y+1),(x+1,y+1)]
 
 ################################################################################
 
@@ -88,6 +88,7 @@ class Faction(object):
         self.fortifications = []
         self.availfortresses = 1
         self.fortresscost = 10000
+        self.explored = []
 
     def __srt__(self):
         return self.name +", "+ str(self.size) +" inhabitants."
@@ -150,6 +151,7 @@ class Population(object):
                         world.factions[self.owner].availpops += 2
                         world.factions[self.owner].settlements.remove('ᵃ')
                         world.factions[self.owner].settlements.append('a')
+                        return 1
 
     def build_city(self, world):
         if world.factions[self.owner].wealth >= 10000:
@@ -167,6 +169,7 @@ class Population(object):
                         world.factions[self.owner].availcities += -1
                         world.factions[self.owner].settlements.remove('a')
                         world.factions[self.owner].settlements.append('A')
+                        return 1
 
     def colonize(self, x, y, world, name):
         if self.pos_x + self.ar+3 >= x >= self.pos_x - self.ar-3:
@@ -185,6 +188,7 @@ class Population(object):
                                 world.factions[self.owner].settlements.append('ᵃ')
                                 self.colonizecost = self.colonizecost*2
                                 self.size = self.size - 2000
+                                return 1
 
     def build_fort(self, x, y, world):
         if self.pos_x + self.ar+4 >= x >= self.pos_x - self.ar-4:
@@ -201,6 +205,7 @@ class Population(object):
                                 world.factions[self.owner].settlements.append('ø')
                                 self.availforts += -1
                                 self.size = self.size - 2000
+                                return 1
 
     def upgrade_fort(self, x, y, world):
         if world.factions[self.owner].wealth >= world.factions[self.owner].fortresscost:
@@ -217,6 +222,7 @@ class Population(object):
                         world.factions[self.owner].settlements.append('Ø')
                         world.factions[self.owner].availfortresses += -1
                         self.size = self.size - 20000
+                        return 1
 
     def build_farm(self, x, y, world):
         if self.farms > 0 and world.factions[self.owner].wealth >= self.farmcost:
@@ -230,6 +236,7 @@ class Population(object):
                         world.factions[self.owner].wealth += -self.farmcost
                         self.farmcost += 100
                         self.foodprod += 1
+                        return 1
 
     def claim(self, x, y, world):
         if world.mat[y][x] in (1,2,3,4,5):
@@ -247,6 +254,16 @@ class Population(object):
                                 self.claimedpos.append((x,y))
                                 if  world.mat[y][x] in (1,2,3):
                                     self.food += 1
+                                return 1
+
+    def explore(self, x, y, world):
+        if (x,y) not in world.factions[self.owner].explored:
+            diffx = abs(x-self.pos_x)
+            diffy = abs(y-self.pos_y)
+            world.factions[self.owner].explored.append((x,y))
+            world.factions[self.owner].wealth += -10*(diffx+diffy)
+            self.size += -10*(diffx+diffy)
+            return 1
 
     def turn(self):
         if len(list(self.influence.keys())) > 1:

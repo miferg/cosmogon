@@ -27,7 +27,6 @@ random.shuffle(names)
 player1 = {"name":names.pop()}
 player2 = {"name":names.pop()}
 players = [player1,player2]
-
 # initialize calendar
 calorigin = time.perf_counter()
 
@@ -37,6 +36,7 @@ def threaded_client(conn, player):
     reply = ""
     while True:
         try:
+            origplayers = players.copy()
             data = json.loads(conn.recv(16000))
             players[player] = data
 
@@ -45,8 +45,9 @@ def threaded_client(conn, player):
                 break
             else:
                 reply = players
-                #print("Received: ", data)
-                #print("Sending : ", reply)
+                if reply  != origplayers:
+                    print("Received: ", data)
+                    print("Sending : ", reply)
             
             conn.sendall(json.dumps(reply).encode())
         except:
