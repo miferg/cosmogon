@@ -41,7 +41,7 @@ def drop_fog(world):  # darken the map
     worldpad = curses.newpad(world.h+1, world.w+1)
     for i in range(0, world.h):
         for j in range(0, world.w):
-            worldpad.addstr(i, j, str("·"),curses.color_pair(7))
+            worldpad.addstr(i, j, str("·"),curses.color_pair(5))
     return(worldpad)
 
 ################################################################################
@@ -72,9 +72,10 @@ def set_colors():
     curses.init_pair(2, curses.COLOR_YELLOW, curses.COLOR_BLACK)
     curses.init_pair(3, curses.COLOR_GREEN, curses.COLOR_BLACK)
     curses.init_pair(4, curses.COLOR_BLACK, curses.COLOR_WHITE)
-    curses.init_pair(5, curses.COLOR_RED, curses.COLOR_BLACK)
-    curses.init_pair(6, curses.COLOR_BLACK, curses.COLOR_RED)
-    curses.init_pair(7, curses.COLOR_WHITE, curses.COLOR_BLACK)
+    curses.init_pair(5, curses.COLOR_WHITE, curses.COLOR_BLACK)
+    curses.init_pair(6, curses.COLOR_BLACK, curses.COLOR_WHITE)
+    curses.init_pair(7, curses.COLOR_RED, curses.COLOR_BLACK)
+    curses.init_pair(8, curses.COLOR_BLACK, curses.COLOR_RED)
 
     col_dict = {
         1: curses.color_pair(1), # water ~
@@ -86,8 +87,9 @@ def set_colors():
         7: curses.color_pair(5), # village ᵃ
         8: curses.color_pair(5), # town a
         9: curses.color_pair(5), # city A
-        10: curses.color_pair(7), # Fort ø
-        11: curses.color_pair(7), # Fortress Ø
+        10: curses.color_pair(5), # Fort ø
+        11: curses.color_pair(5), # Fortress Ø
+        12: curses.color_pair(7), # Army ¥
         }
 
     return col_dict
