@@ -6,7 +6,7 @@ This file includes lists, dictionaries, and arrays.
 """
 import numpy
 
-names = ["Ogarthe", "Ulfheim", "Elomkuk", "Unnwn", "Emirovati", "Ircadie", "Usgard", "Usphedil", "Etlontus", "Uvelon", "Oxus Minde", "Iyothe", "Amorthe", "Gungei", "Oztlán", "Biltea", "Boarmelond", "Burengan", "Bruhmepira", "Brottia", "Cemolet", "Cackeigne", "Fforeon", "Deya", "Darudo", "Aden", "Hisparedis", "Garius", "Foneus", "Merios", "Filies", "Howaeko", "Hievan", "Hol", "Hill", "Hyparberia", "Orkelli", "Jubelqi", "Jobilse", "Jembodvīpe", "Jetinheum", "Roynas", "Sugeiney", "Kotazh", "Kilub", "Kenlin", "Kvonlund", "Kyöpalenvaero", "Loistrygen", "Puramo", "Limeria", "Lantoketa", "Lyanissu", "Mug Mall", "Morapes", "Muctlon", "Alympes", "Panglei", "Ma", "Mospilheum", "Nireko", "Jurasolim", "Nebire", "Noflhaem", "Naflhol", "Nurvoni", "Norimbaga", "Nyse", "Poitati", "Puncheio", "Pongeuo", "Pindæmanaim", "Plarima", "Puhjala ", "Pirgotary", "Quavire", "Cíbile", "Rom Sata ", "Semivosirine", "Schilamanci", "Shumbhelo", "Shengro-Le", "Sadem", "Gamirreh", "Seddani", "Svorgi", "Svertálfohaemr", "Tokime-go-hire", "Tirturas", "Thamoscyre", "Thala", "Thiviroiyem Potha", "Túr ne nÉg", "Volhello", "Vunehaemr", "Wostarnissa", "Xebolbi", "Yami", "Ys", "Zorehimle", "Zurzaro", "Zoin"]
+names = ["Ogarthe", "Ulfheim", "Elomkuk", "Unnwn", "Emirovati", "Ircadie", "Usgard", "Usphedil", "Etlontus", "Uvelon", "Oxus Minde", "Iyothe", "Amorthe", "Gungei", "Oztlán", "Biltea", "Boarmelond", "Burengan", "Bruhmepira", "Brottia", "Cemolet", "Cackeigne", "Fforeon", "Deya", "Darudo", "Aden", "Hisparedis", "Garius", "Foneus", "Merios", "Filies", "Howaeko", "Hievan", "Hol", "Hill", "Hyparberia", "Orkelli", "Jubelqi", "Jobilse", "Jembodvīpe", "Jetinheum", "Roynas", "Sugeiney", "Kotazh", "Kilub", "Kenlin", "Kvonlund", "Kyöpalenvaero", "Loistrygen", "Puramo", "Limeria", "Lantoketa", "Lyanissu", "Mug Mall", "Morapes", "Muctlon", "Alympes", "Panglei", "Ma", "Mospilheum", "Nireko", "Jurasolim", "Nebire", "Noflhaem", "Naflhol", "Nurvoni", "Norimbaga", "Nyse", "Poitati", "Puncheio", "Pongeuo", "Pindæmanaim", "Plarima", "Puhjala ", "Pirgotary", "Quavire", "Cíbile", "Rom Sata ", "Semivosirine", "Schilamanci", "Shumbhelo", "Shengro-Le", "Sadem", "Gamirreh", "Seddani", "Svorgi", "Svertálfohaemr", "Tokime-go-hire", "Tirturas", "Thamoscyre", "Thala", "Thiviroiyem", "Potha", "Túr ne nÉg", "Volhello", "Vunehaemr", "Wostarnissa", "Xebolbi", "Yami", "Ys", "Zorehimle", "Zurzaro", "Zoin", "Civipil", "Asheh", "Celzozni", "Seirli", "Sarmi", "Vakag","Sovalgay", "Vafne", "Nazhechi", "Zozhis", "Ereveth", "Yilve", "Xue", "Tsiao", "Beinf", "Sar"]
 
 char_dict = {
     1: "~",
@@ -18,6 +18,9 @@ char_dict = {
     7: "ª",
     8: "a",
     9: "A",
+    10: "ø",
+    11: "Ø",
+    12: "¥",
         }
 
 type_dict = {
@@ -30,6 +33,9 @@ type_dict = {
     7: "Village",
     8: "Town",
     9: "City",
+    10: "Fort",
+    11: "Fortress",
+    12: "Army",
         }
 
 testmat = numpy.array([
