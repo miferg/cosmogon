@@ -212,7 +212,7 @@ def cosmogon(stdscr):
                     world.create_pop(world, cursor_x,cursor_y, nwpopname, p["name"])
                     world.pad = drop_fog(world)
                     local_refresh_pad(cursor_x, cursor_y, char_dict, col_dict, world)
-                    surroundlist = surrounding(cursor_x, cursor_y)
+                    surroundlist = surrounding(cursor_x, cursor_y, 1)
                     for pair in surroundlist:
                         local_refresh_pad(pair[0], pair[1], char_dict, col_dict, world)
                     p["b"] = (cursor_x, cursor_y, nwpopname)
@@ -241,7 +241,7 @@ def cosmogon(stdscr):
             world.pad.addstr(selected_pos[1],selected_pos[0],str(world.map[selected_pos]), curses.color_pair(5))
             diffx = abs(cursor_x-selected_pos[0])
             diffy = abs(cursor_y-selected_pos[1])
-            surroundlist = surrounding(cursor_x, cursor_y)
+            surroundlist = surrounding(cursor_x, cursor_y, 1)
             if world.factions[world.pops[selected_pos].owner].wealth >= 10*(diffx+diffy):
                 if world.pops[selected_pos].size >= 10*(diffx+diffy):
                     if bool(set(world.factions[p["name"]].explored) & set(surroundlist)):
@@ -406,27 +406,55 @@ def cosmogon(stdscr):
 ################################################################################
 # Automatic operations
 
-        # Make the pops, armies and riches grow
+        # Yearly
+        if calendar.year != grow_year:
+            grow_year = calendar.year
+            # Produce food
+            for pop in world.poplist:
+                world.pops[pop].get_food(world)
+
+        # Monthly
         if calendar.month != grow_month:
             grow_month = calendar.month
-            for pop in world.poplist:
-                world.pops[pop].grow()
+
+            # Accumulate wealth
+            for faction in world.factions.keys():
+                world.factions[faction].get_wealth()
+
+            # Manage armies
             for army in list(world.armies.keys()):
-                world.armies[army].grow()
+                surroundlist = surrounding(army[0], army[1], world.armies[army].mr)
+
+                # Raid settlement
+                if bool(set(world.poplist) & set(surroundlist)):
+                    inmr = list(set(world.poplist) & set(surroundlist))
+                    for pob in inmr:
+                        if world.armies[army].owner != world.pops[pob].owner:
+                            world.pops[pob].size += -(world.armies[army].size*world.armies[army].s_damagerate)
+                            world.pops[pob].food = 0
+                # Desertion
+                desertion = 1
+                if bool(set(world.forts.keys()) & set(surroundlist)):
+                    inmr = list(set(world.forts.keys()) & set(surroundlist))
+                    for fort in inmr:
+                        if world.armies[army].owner == world.forts[fort].owner:
+                            desertion = 0
+                if desertion == 1:
+                    world.armies[army].grow()
+
+                # Disband
                 if world.armies[army].size <= 0:
                     if 'armysel_pos' in locals() and army == armysel_pos:
                         armysel = 0
                         del armysel_pos
                     world.armies[army].disband(world)
                     local_refresh_pad(army[0], army[1], char_dict, col_dict, world)
-            for faction in world.factions.keys():
-                world.factions[faction].get_wealth()
 
-        # Produce food
-        if calendar.year != grow_year:
-            grow_year = calendar.year
+            # Population grow
             for pop in world.poplist:
-                world.pops[pop].get_food(world)
+                world.pops[pop].grow(world)
+
+
 
         # Estimate faction sizes
         for faction in world.factions.keys():

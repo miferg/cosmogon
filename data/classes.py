@@ -22,7 +22,7 @@ class Calendar(object):
     def update(self):
         change = time.perf_counter() - self.origin
         # month duration in seconds
-        dur = 0.25
+        dur = 1
         self.year = int(change // (12 * dur))
         self.month = int((change % (12 * dur)) // dur)
 
@@ -130,15 +130,26 @@ class Population(object):
         self.foodprod = 0
         self.fortcost = 1500
         self.availforts = 0
+        self.addedwealth = 1
+        self.ruined = 0
 
-    def grow(self):
-        self.size = self.size + (self.size*self.growth*((self.cap-self.size)/self.cap))
-        if self.size > self.cap:
-            self.size = self.cap
-        if self.size < 0:
+    def grow(self, world):
+        if self.ruined == 0:
+            self.size = self.size + (self.size*self.growth*((self.cap-self.size)/self.cap))
+            if self.size > self.cap:
+                self.size = self.cap
+            if self.food == 0:
+                self.size = self.size - self.size*0.01
+            if self.size < 0:
+                self.size = 0
+                world.factions[self.owner].wealthrate += -self.addedwealth
+                self.addedwealth = 0
+                self.foodprod = 0
+                self.growth = 0
+                self.name += ', ruined'
+                self.ruined = 1
+        else:
             self.size = 0
-        if self.food == 0:
-            self.size = self.size - self.size*0.01
 
     def get_food(self, world):
         world.factions[self.owner].wealth += self.food
@@ -157,6 +168,7 @@ class Population(object):
                             self.ar += 2
                             self.food += -2
                             self.availforts += 1
+                            self.addedwealth += 2
                             world.factions[self.owner].wealth += -1000
                             world.factions[self.owner].wealthrate += 2
                             world.factions[self.owner].availtowns += -1
@@ -178,6 +190,7 @@ class Population(object):
                             self.claimslots += 1
                             self.ar += 4
                             self.food += -3
+                            self.addedwealth += 4
                             world.factions[self.owner].wealth += -10000
                             world.factions[self.owner].wealthrate += 4
                             world.factions[self.owner].availcities += -1
@@ -214,6 +227,7 @@ class Population(object):
                             if self.size >= 10000:
                                 world.forts[(x,y)] = Fortification(self.owner, x, y)
                                 world.mat[y][x] = 10
+                                self.addedwealth += -0.05
                                 world.factions[self.owner].fortifications.append((x,y))
                                 world.factions[self.owner].wealthrate += -0.5
                                 world.factions[self.owner].wealth += -self.fortcost
@@ -237,6 +251,7 @@ class Population(object):
                         world.factions[self.owner].fortlist.append('Ø')
                         world.factions[self.owner].availfortresses += -1
                         self.size = self.size - 20000
+                        self.addedwealth += -1
                         return 1
 
     def build_farm(self, x, y, world):
@@ -247,6 +262,7 @@ class Population(object):
                         world.mat[y][x] = 6
                         self.growth += 0.002
                         self.farms += -1
+                        self.addedwealth += 1
                         world.factions[self.owner].wealthrate += 1
                         world.factions[self.owner].wealth += -self.farmcost
                         self.farmcost += 100
@@ -264,6 +280,7 @@ class Population(object):
                                 world.factions[self.owner].cells.append(world.mat[y][x])
                                 self.claimcost = self.claimcost*10
                                 world.factions[self.owner].wealthrate += 0.5
+                                self.addedwealth += 0.5
                                 self.claimed.append(world.mat[y][x])
                                 self.claimslots += -1
                                 self.claimedpos.append((x,y))
@@ -295,25 +312,28 @@ class Population(object):
                                 world.factions[self.owner].wealthrate += -0.5
                                 world.factions[self.owner].wealth += -world.factions[self.owner].armycost
                                 world.factions[self.owner].armylist.append(world.armies[(x,y)].name)
+                                self.addedwealth += -0.5
                                 self.size = self.size - 6000
                                 return 1
 
     def reinforce(self, x, y, world, calendar):
         if (x, y) in world.factions[self.owner].fortifications:
-            if self.size >= 1200:
+            if self.size >= 1200 and world.factions[self.owner].wealth >= 1000:
                 if world.forts[(x,y)].lastryear != calendar.year:
                     if world.forts[(x,y)].size < world.forts[(x,y)].cap:
                         world.forts[(x,y)].size += 1000
                         self.size += -1200
+                        world.factions[self.owner].wealth += -1000
                         world.forts[(x,y)].lastryear = calendar.year
                         return 1
         elif (x, y) in world.factions[self.owner].armies:
-            if self.size >= 1200:
+            if self.size >= 1200 and world.factions[self.owner].wealth >= 800:
                 if self.pos_x + self.ar >= x >= self.pos_x - self.ar:
                     if self.pos_y + self.ar >= y >= self.pos_y - self.ar:
                         if world.armies[(x,y)].lastrdate != str(calendar):
                             if world.armies[(x,y)].size < world.armies[(x,y)].cap:
                                 self.size += -1200
+                                world.factions[self.owner].wealth += -800
                                 world.armies[(x,y)].size += 1000
                                 world.armies[(x,y)].lastrdate = str(calendar)
                                 return 1
@@ -336,6 +356,7 @@ class Fortification(object):
         self.pos_y = y
         self.mr = 4  # manuveur range
         self.lastryear = 0
+        self.a_damagerate = 0.1
 
 ################################################################################
 
@@ -345,13 +366,16 @@ class Army(object):
         self.owner = owner
         self.name = name
         self.influence = {self.owner:100}
-        self.cap = 20000
+        self.cap = 10000
         self.pos_x = x
         self.pos_y = y
         self.under = 0
-        self.mr = 4  # manuveur range
+        self.mr = 1  # manuveur range
         self.lastrdate = 0
         self.desertion = 15
+        self.s_damagerate = 0.1
+        self.o_damagerate = 0.02
+        self.a_damagerate = 0.25
 
     def grow(self):
         self.size += -self.desertion
@@ -379,6 +403,8 @@ class Army(object):
         world.factions[self.owner].armynames = [self.name] + world.factions[self.owner].armynames
         world.factions[self.owner].armies.remove((self.pos_x,self.pos_y))
         world.factions[self.owner].availarmies += 1
+        world.factions[self.owner].wealthrate += 0.5
         del world.armies[(self.pos_x,self.pos_y)]
+
 
 

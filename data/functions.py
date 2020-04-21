@@ -46,8 +46,11 @@ def drop_fog(world):  # darken the map
 
 ################################################################################
 
-def surrounding(x, y):
-    srlist = [(x-1,y-1),(x,y-1),(x+1,y-1),(x-1,y),(x+1,y),(x-1,y+1),(x,y+1),(x+1,y+1)]
+def surrounding(x, y, rng):
+    srlist = []
+    for i in range(x-rng,x+rng+1):
+        for j in range(y-rng,y+rng+1):
+            srlist.append((i,j))
     return srlist
 
 ################################################################################
