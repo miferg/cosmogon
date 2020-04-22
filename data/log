@@ -1,0 +1,1418 @@
+Waiting for a connection, Server Started
+127.0.0.1
+Connected to: ('127.0.0.1', 34956)
+Connected to: ('127.0.0.1', 34958)
+Received:  {'name': 'Hisparedis', 'b': [5, 10, 'Vafne']}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'b': [5, 10, 'Vafne']}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'b': [5, 10, 'Vafne']}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'f': [[5, 10], 6, 10]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'f': [[5, 10], 6, 10]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'f': [[5, 10], 6, 10]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'f': [[5, 10], 6, 9]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'f': [[5, 10], 6, 9]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'f': [[5, 10], 6, 9]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'b': [5, 2, 'Kilub']}
+Sending :  [{'name': 'Gamirreh', 'b': [5, 2, 'Kilub']}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'b': [5, 2, 'Kilub']}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'f': [[5, 2], 6, 2]}
+Sending :  [{'name': 'Gamirreh', 'f': [[5, 2], 6, 2]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'f': [[5, 2], 6, 2]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'f': [[5, 2], 6, 3]}
+Sending :  [{'name': 'Gamirreh', 'f': [[5, 2], 6, 3]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'bt': [5, 10]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'bt': [5, 10]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'f': [[5, 10], 5, 9]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'f': [[5, 10], 5, 9]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'bt': [5, 2]}
+Sending :  [{'name': 'Gamirreh', 'bt': [5, 2]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'bt': [5, 2]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'f': [[5, 2], 5, 3]}
+Sending :  [{'name': 'Gamirreh', 'f': [[5, 2], 5, 3]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 4, 4]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 4, 4]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 5, 4]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 5, 4]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 5, 4]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 6, 4]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 6, 4]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 6, 4]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 7, 4]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 7, 4]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 7, 4]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 6, 5]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 6, 5]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 6, 5]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 6, 6]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 6, 6]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 6, 7]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 6, 7]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 6, 7]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 6, 8]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 6, 8]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 6, 8]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 6, 9]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 6, 9]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 6, 9]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 6, 10]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 6, 10]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 5, 10]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 5, 10]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 5, 9]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 5, 9]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 5, 9]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 5, 8]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 5, 8]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 5, 7]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 5, 7]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 5, 7]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 5, 6]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 5, 6]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 5, 6]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 5, 5]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 5, 5]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 4, 5]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 4, 5]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 4, 5]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 4, 6]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 4, 6]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 4, 6]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 4, 7]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 4, 7]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 4, 7]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 4, 8]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 4, 8]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 4, 8]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 4, 9]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 4, 9]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 4, 9]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 4, 10]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 4, 10]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 4, 10]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 3, 3]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 3, 3]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 3, 4]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 3, 4]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 3, 5]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 3, 5]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 3, 6]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 3, 6]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 3, 8]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 3, 8]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 3, 9]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 3, 9]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 3, 9]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 7, 10]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 7, 10]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 7, 10]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 7, 9]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 7, 9]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 7, 9]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 7, 7]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 7, 7]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 7, 6]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 7, 6]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 7, 5]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 7, 5]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 7, 5]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 7, 8]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 7, 8]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 8, 10]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 8, 10]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 8, 10]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 8, 9]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 8, 9]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 8, 9]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 8, 8]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 8, 8]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 8, 8]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 8, 6]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 8, 6]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 8, 6]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 8, 5]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 8, 5]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 8, 5]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 8, 7]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 8, 7]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 8, 7]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 8, 4]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 8, 4]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 8, 3]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 8, 3]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 8, 2]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 8, 2]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 8, 2]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 7, 3]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 7, 3]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 7, 3]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 7, 2]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 7, 2]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 7, 1]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 7, 1]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 7, 1]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 8, 1]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 8, 1]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 8, 1]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 9, 1]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 1]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 1]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 9, 2]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 2]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 2]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 9, 3]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 3]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 3]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 9, 4]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 4]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 4]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 9, 5]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 5]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 9, 6]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 6]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 6]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 9, 7]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 7]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 7]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 9, 8]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 8]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 8]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 9, 9]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 9]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 9]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 9, 10]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 10]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 9, 10]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 7, 10]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 7, 10]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 7, 9]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 7, 9]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 7, 9]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 7, 8]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 7, 8]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 7, 7]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 7, 7]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 7, 6]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 7, 6]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 7, 6]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 7, 5]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 7, 5]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 7, 5]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 7, 4]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 7, 4]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 7, 4]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 7, 3]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 7, 3]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 7, 3]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 7, 2]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 7, 2]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 7, 2]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 7, 1]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 7, 1]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 7, 1]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 6, 2]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 6, 2]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 6, 3]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 6, 3]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 6, 3]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 6, 4]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 6, 4]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 6, 4]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 6, 6]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 6, 6]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 6, 7]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 6, 7]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 6, 8]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 6, 8]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 6, 8]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 6, 5]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 6, 5]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 6, 5]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 5, 8]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 5, 8]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 5, 8]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 5, 7]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 5, 7]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 5, 7]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 5, 6]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 5, 6]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 5, 6]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 5, 5]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 5, 5]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 5, 5]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 5, 3]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 5, 3]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 5, 4]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 5, 4]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 5, 4]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 5, 2]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 5, 2]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 8, 2]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 8, 2]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 8, 3]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 8, 3]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 8, 4]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 8, 4]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 8, 4]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 8, 5]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 8, 5]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 8, 6]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 8, 6]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 8, 6]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 8, 7]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 8, 7]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 8, 7]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 8, 8]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 8, 8]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 8, 8]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 8, 9]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 8, 9]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 8, 10]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 8, 10]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 8, 10]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 9, 10]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 9, 10]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 9, 9]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 9, 9]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 9, 8]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 9, 8]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 9, 8]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 9, 7]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 9, 7]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 9, 7]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 9, 6]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 9, 6]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 9, 6]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 9, 5]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 9, 5]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 9, 5]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 9, 4]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 9, 4]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 9, 3]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 9, 3]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 9, 3]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 9, 2]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 9, 2]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 9, 2]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 10, 2]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 10, 2]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 10, 2]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 10, 3]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 10, 3]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 10, 3]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 10, 4]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 10, 4]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 10, 5]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 10, 5]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 10, 5]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 10, 6]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 10, 6]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 10, 7]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 10, 7]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 10, 8]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 10, 8]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 10, 9]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 10, 9]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'x': [[5, 10], 10, 10]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 10, 10]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'x': [[5, 10], 10, 10]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'o': [[5, 10], 10, 10]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'o': [[5, 10], 10, 10]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'o': [[5, 10], 10, 10]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 10, 2]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 10, 2]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 10, 10]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 10, 10]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 10, 9]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 10, 9]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 10, 8]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 10, 8]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 10, 8]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 10, 7]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 10, 7]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 10, 6]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 10, 6]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 10, 6]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 10, 4]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 10, 4]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 10, 3]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 10, 3]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 10, 3]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'x': [[5, 2], 10, 5]}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 10, 5]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'x': [[5, 2], 10, 5]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'o': [[5, 2], 10, 2]}
+Sending :  [{'name': 'Gamirreh', 'o': [[5, 2], 10, 2]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'm': [[5, 2], 8, 2]}
+Sending :  [{'name': 'Gamirreh', 'm': [[5, 2], 8, 2]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'm': [[5, 2], 8, 2]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'm': [[5, 10], 8, 10]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'm': [[5, 10], 8, 10]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'm': [[5, 10], 8, 10]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'z': [[8, 10], 9, 10, 309387.683977804]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'z': [[8, 10], 9, 10, 309387.683977804]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'z': [[8, 10], 9, 10, 309387.683977804]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[8, 2], 9, 2, 309390.740475927]}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 2], 9, 2, 309390.740475927]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 2], 8, 2, 309428.205678592]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 2], 8, 2, 309428.205678592]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 2], 8, 2, 309428.205678592]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[8, 2], 7, 2, 309428.588128674]}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 2], 7, 2, 309428.588128674]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'r': [[5, 2], 7, 2, 309431.60302506]}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 7, 2, 309431.60302506]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'r': [[5, 2], 7, 2, 309433.386649557]}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 7, 2, 309433.386649557]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 7, 2, 309433.386649557]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'r': [[5, 2], 7, 2, 309437.127107214]}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 7, 2, 309437.127107214]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'r': [[5, 2], 7, 2, 309439.590484918]}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 7, 2, 309439.590484918]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 7, 2, 309439.590484918]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'r': [[5, 2], 7, 2, 309440.90707122]}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 7, 2, 309440.90707122]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'r': [[5, 2], 7, 2, 309442.268491209]}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 7, 2, 309442.268491209]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 7, 2, 309442.268491209]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[7, 2], 8, 2, 309444.476112287]}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 2], 8, 2, 309444.476112287]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 2], 8, 2, 309444.476112287]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[8, 2], 9, 2, 309444.816077699]}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 2], 9, 2, 309444.816077699]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 2], 9, 2, 309444.816077699]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'z': [[9, 10], 8, 10, 309452.624866889]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'z': [[9, 10], 8, 10, 309452.624866889]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'z': [[9, 10], 8, 10, 309452.624866889]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'r': [[5, 10], 8, 10, 309454.449653789]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'r': [[5, 10], 8, 10, 309454.449653789]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'r': [[5, 10], 8, 10, 309454.449653789]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'r': [[5, 10], 8, 10, 309455.724534118]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'r': [[5, 10], 8, 10, 309455.724534118]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'r': [[5, 10], 8, 10, 309455.724534118]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'r': [[5, 10], 8, 10, 309456.911804901]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'r': [[5, 10], 8, 10, 309456.911804901]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'r': [[5, 10], 8, 10, 309456.911804901]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'r': [[5, 10], 8, 10, 309458.058909735]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'r': [[5, 10], 8, 10, 309458.058909735]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'r': [[5, 10], 8, 10, 309458.058909735]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'r': [[5, 10], 8, 10, 309459.160664614]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'r': [[5, 10], 8, 10, 309459.160664614]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'r': [[5, 10], 8, 10, 309459.160664614]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'r': [[5, 10], 8, 10, 309481.864365929]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'r': [[5, 10], 8, 10, 309481.864365929]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'r': [[5, 10], 8, 10, 309481.864365929]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'z': [[8, 10], 9, 10, 309485.299453751]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'z': [[8, 10], 9, 10, 309485.299453751]}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'z': [[8, 10], 9, 10, 309485.299453751]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 2], 9, 3, 309502.149263924]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 2], 9, 3, 309502.149263924]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 3], 9, 4, 309502.446596828]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 3], 9, 4, 309502.446596828]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 3], 9, 4, 309502.446596828]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 4], 9, 5, 309502.700966368]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 4], 9, 5, 309502.700966368]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 4], 9, 5, 309502.700966368]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 5], 9, 6, 309503.252916994]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 5], 9, 6, 309503.252916994]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 5], 9, 6, 309503.252916994]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'z': [[9, 10], 9, 9, 309505.421168492]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'z': [[9, 10], 9, 9, 309505.421168492]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'z': [[9, 9], 9, 8, 309505.762463126]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'z': [[9, 9], 9, 8, 309505.762463126]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis', 'z': [[9, 8], 9, 7, 309506.400504251]}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis', 'z': [[9, 8], 9, 7, 309506.400504251]}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 6], 9, 5, 309525.309562862]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 6], 9, 5, 309525.309562862]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 5], 9, 4, 309525.608225784]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 5], 9, 4, 309525.608225784]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 5], 9, 4, 309525.608225784]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 4], 9, 3, 309525.862514242]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 4], 9, 3, 309525.862514242]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 3], 9, 4, 309599.503297429]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 3], 9, 4, 309599.503297429]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 3], 9, 4, 309599.503297429]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 4], 9, 3, 309602.482197744]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 4], 9, 3, 309602.482197744]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 4], 9, 3, 309602.482197744]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 3], 9, 4, 309637.163387034]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 3], 9, 4, 309637.163387034]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 3], 9, 4, 309637.163387034]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 4], 9, 5, 309637.501607993]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 4], 9, 5, 309637.501607993]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 4], 9, 5, 309637.501607993]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 5], 9, 6, 309637.753908619]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 5], 9, 6, 309637.753908619]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 6], 9, 7, 309638.009842412]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 6], 9, 7, 309638.009842412]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 7], 9, 8, 309638.222099739]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 7], 9, 8, 309638.222099739]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'm': [[5, 2], 8, 2]}
+Sending :  [{'name': 'Gamirreh', 'm': [[5, 2], 8, 2]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'm': [[5, 2], 8, 2]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[8, 2], 9, 2, 309670.744145078]}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 2], 9, 2, 309670.744145078]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 2], 9, 2, 309670.744145078]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'bc': [5, 2]}
+Sending :  [{'name': 'Gamirreh', 'bc': [5, 2]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'bc': [5, 2]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'm': [[5, 2], 7, 2]}
+Sending :  [{'name': 'Gamirreh', 'm': [[5, 2], 7, 2]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[7, 2], 8, 3, 309686.026135701]}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 2], 8, 3, 309686.026135701]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[8, 3], 9, 3, 309686.704630403]}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 3], 9, 3, 309686.704630403]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 3], 9, 3, 309686.704630403]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'r': [[5, 2], 9, 3, 309699.732169689]}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 3, 309699.732169689]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'r': [[5, 2], 9, 3, 309701.427181577]}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 3, 309701.427181577]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 3, 309701.427181577]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'r': [[5, 2], 9, 3, 309702.872330373]}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 3, 309702.872330373]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 3, 309702.872330373]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'r': [[5, 2], 9, 3, 309703.804259566]}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 3, 309703.804259566]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 3, 309703.804259566]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'r': [[5, 2], 9, 3, 309704.61008531]}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 3, 309704.61008531]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'r': [[5, 2], 9, 3, 309706.90323564]}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 3, 309706.90323564]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 3, 309706.90323564]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'r': [[5, 2], 9, 2, 309709.535750166]}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 2, 309709.535750166]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'r': [[5, 2], 9, 2, 309710.937006155]}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 2, 309710.937006155]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 2, 309710.937006155]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'r': [[5, 2], 9, 2, 309712.210423098]}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 2, 309712.210423098]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'r': [[5, 2], 9, 2, 309713.398164221]}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 2, 309713.398164221]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 2, 309713.398164221]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'r': [[5, 2], 9, 2, 309714.37687002]}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 2, 309714.37687002]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'r': [[5, 2], 9, 2, 309716.331587069]}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 2, 309716.331587069]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'r': [[5, 2], 9, 2, 309716.331587069]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 3], 9, 4, 309725.289572404]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 3], 9, 4, 309725.289572404]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 3], 9, 4, 309725.289572404]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 4], 9, 5, 309725.543508976]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 4], 9, 5, 309725.543508976]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 5], 9, 6, 309725.754653243]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 5], 9, 6, 309725.754653243]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 5], 9, 6, 309725.754653243]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 6], 9, 7, 309725.923585837]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 6], 9, 7, 309725.923585837]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 7], 9, 8, 309726.135735094]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 7], 9, 8, 309726.135735094]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 7], 9, 8, 309726.135735094]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 8], 9, 9, 309726.304268784]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 8], 9, 9, 309726.304268784]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 2], 9, 3, 309732.163750493]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 2], 9, 3, 309732.163750493]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 2], 9, 3, 309732.163750493]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 3], 9, 4, 309732.628736516]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 3], 9, 4, 309732.628736516]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 3], 9, 4, 309732.628736516]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 4], 9, 5, 309732.840555727]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 4], 9, 5, 309732.840555727]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 4], 9, 5, 309732.840555727]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 5], 9, 6, 309733.052315417]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 5], 9, 6, 309733.052315417]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 6], 9, 7, 309733.221931931]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 6], 9, 7, 309733.221931931]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 6], 9, 7, 309733.221931931]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 7], 9, 8, 309733.774504077]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 7], 9, 8, 309733.774504077]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 8], 10, 8, 309734.198925418]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 8], 10, 8, 309734.198925418]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[10, 8], 10, 9, 309734.497418954]}
+Sending :  [{'name': 'Gamirreh', 'z': [[10, 8], 10, 9, 309734.497418954]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 9], 8, 9, 309745.48303891]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 9], 8, 9, 309745.48303891]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 9], 8, 9, 309745.48303891]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[8, 9], 7, 9, 309745.695854752]}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 9], 7, 9, 309745.695854752]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 9], 7, 9, 309745.695854752]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[7, 9], 6, 9, 309745.909164679]}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 9], 6, 9, 309745.909164679]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[10, 9], 9, 9, 309752.738942944]}
+Sending :  [{'name': 'Gamirreh', 'z': [[10, 9], 9, 9, 309752.738942944]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[10, 9], 9, 9, 309752.738942944]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[9, 9], 8, 9, 309753.20559322]}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 9], 8, 9, 309753.20559322]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[9, 9], 8, 9, 309753.20559322]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[8, 9], 7, 9, 309753.544589087]}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 9], 7, 9, 309753.544589087]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[7, 9], 7, 10, 309754.394172759]}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 9], 7, 10, 309754.394172759]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 9], 7, 10, 309754.394172759]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[7, 10], 6, 10, 309754.775650729]}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 10], 6, 10, 309754.775650729]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 10], 6, 10, 309754.775650729]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[6, 10], 7, 9, 309919.40695929]}
+Sending :  [{'name': 'Gamirreh', 'z': [[6, 10], 7, 9, 309919.40695929]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[6, 10], 7, 9, 309919.40695929]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[7, 9], 8, 9, 309919.703274491]}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 9], 8, 9, 309919.703274491]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 9], 8, 9, 309919.703274491]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[8, 9], 7, 10, 309951.82653558]}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 9], 7, 10, 309951.82653558]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[7, 10], 6, 10, 309953.013221234]}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 10], 6, 10, 309953.013221234]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 10], 6, 10, 309953.013221234]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[6, 10], 7, 9, 310020.806228444]}
+Sending :  [{'name': 'Gamirreh', 'z': [[6, 10], 7, 9, 310020.806228444]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[6, 10], 7, 9, 310020.806228444]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[7, 9], 7, 8, 310021.059877309]}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 9], 7, 8, 310021.059877309]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 9], 7, 8, 310021.059877309]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[7, 8], 7, 7, 310021.229932594]}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 8], 7, 7, 310021.229932594]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 8], 7, 7, 310021.229932594]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[7, 7], 7, 6, 310021.399491402]}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 7], 7, 6, 310021.399491402]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[7, 6], 7, 5, 310021.569197931]}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 6], 7, 5, 310021.569197931]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[7, 5], 7, 4, 310021.739652916]}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 5], 7, 4, 310021.739652916]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 5], 7, 4, 310021.739652916]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[7, 4], 8, 4, 310021.950824662]}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 4], 8, 4, 310021.950824662]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 4], 8, 4, 310021.950824662]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[8, 4], 8, 3, 310022.162875867]}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 4], 8, 3, 310022.162875867]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 4], 8, 3, 310022.162875867]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[8, 3], 8, 2, 310022.332095224]}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 3], 8, 2, 310022.332095224]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 3], 8, 2, 310022.332095224]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[8, 2], 9, 2, 310022.799504685]}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 2], 9, 2, 310022.799504685]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[6, 9], 7, 9, 310031.560449509]}
+Sending :  [{'name': 'Gamirreh', 'z': [[6, 9], 7, 9, 310031.560449509]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[6, 9], 7, 9, 310031.560449509]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[7, 9], 7, 8, 310031.772173498]}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 9], 7, 8, 310031.772173498]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[7, 8], 7, 7, 310031.941144821]}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 8], 7, 7, 310031.941144821]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[7, 7], 7, 6, 310032.111324073]}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 7], 7, 6, 310032.111324073]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 7], 7, 6, 310032.111324073]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[7, 6], 7, 5, 310032.28160575]}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 6], 7, 5, 310032.28160575]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 6], 7, 5, 310032.28160575]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[7, 5], 8, 5, 310032.492661903]}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 5], 8, 5, 310032.492661903]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[7, 5], 8, 5, 310032.492661903]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[8, 5], 8, 4, 310032.704850889]}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 5], 8, 4, 310032.704850889]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 5], 8, 4, 310032.704850889]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[8, 4], 8, 3, 310032.9181352]}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 4], 8, 3, 310032.9181352]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 4], 8, 3, 310032.9181352]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh', 'z': [[8, 3], 9, 3, 310033.385174865]}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 3], 9, 3, 310033.385174865]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh', 'z': [[8, 3], 9, 3, 310033.385174865]}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Gamirreh'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Received:  {'name': 'Hisparedis'}
+Sending :  [{'name': 'Gamirreh'}, {'name': 'Hisparedis'}]
+Lost connection
+Lost connection

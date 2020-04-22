@@ -421,8 +421,9 @@ def cosmogon(stdscr):
             for faction in world.factions.keys():
                 world.factions[faction].get_wealth()
 
-            # Manage armies
-            for army in list(world.armies.keys()):
+            # Army encounters
+            for army in world.armies.keys():
+                desertion = 1
                 surroundlist = surrounding(army[0], army[1], world.armies[army].mr)
 
                 # Raid settlement
@@ -431,17 +432,49 @@ def cosmogon(stdscr):
                     for pob in inmr:
                         if world.armies[army].owner != world.pops[pob].owner:
                             world.pops[pob].size += -(world.armies[army].size*world.armies[army].s_damagerate)
-                            world.pops[pob].food = 0
-                # Desertion
-                desertion = 1
+                            world.pops[pob].food = 0 
+
+                # Engage foreign army
+                if bool(set(world.armies.keys()) & set(surroundlist)):
+                    inmr = list(set(world.armies.keys()) & set(surroundlist))
+                    for farmy in inmr:
+                        # Assault foreign fortification
+                        if world.armies[army].owner != world.armies[farmy].owner:
+                            world.armies[farmy].damagetaken += world.armies[army].size*world.armies[army].a_damagerate
+
+                # Interact with fortifications
                 if bool(set(world.forts.keys()) & set(surroundlist)):
                     inmr = list(set(world.forts.keys()) & set(surroundlist))
                     for fort in inmr:
-                        if world.armies[army].owner == world.forts[fort].owner:
+                        # Assault foreign fortification
+                        if world.armies[army].owner != world.forts[fort].owner:
+                            world.forts[fort].damagetaken += world.armies[army].size*world.armies[army].o_damagerate
+                        # Avoid desertion if an allied fortification is in range
+                        else:
                             desertion = 0
                 if desertion == 1:
                     world.armies[army].grow()
 
+            # Fortification actions
+            for fort in world.forts.keys():
+                surroundlist = surrounding(fort[0], fort[1], world.forts[fort].mr)
+                # Harass army
+                if bool(set(world.armies.keys()) & set(surroundlist)):
+                    inmr = list(set(world.armies.keys()) & set(surroundlist))
+                    for army in inmr:
+                        if world.forts[fort].owner !=  world.armies[army].owner:
+                            world.armies[army].damagetaken += world.forts[fort].size*world.forts[fort].a_damagerate
+                # Sustain casualties
+                world.forts[fort].size += -world.forts[fort].damagetaken
+                world.forts[fort].damagetaken = 0
+                if world.forts[fort].size < 0:
+                    world.forts[fort].size = 0
+
+            # Manage army sizes
+            for army in list(world.armies.keys()):
+                # Sustain casualties
+                world.armies[army].size += -world.armies[army].damagetaken
+                world.armies[army].damagetaken = 0
                 # Disband
                 if world.armies[army].size <= 0:
                     if 'armysel_pos' in locals() and army == armysel_pos:
@@ -453,8 +486,6 @@ def cosmogon(stdscr):
             # Population grow
             for pop in world.poplist:
                 world.pops[pop].grow(world)
-
-
 
         # Estimate faction sizes
         for faction in world.factions.keys():

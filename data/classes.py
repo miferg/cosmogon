@@ -80,7 +80,7 @@ class Faction(object):
         self.knowfor = 0
         self.workfor = 0
         self.warfor = 0
-        self.wealth = 100000 # testing 0
+        self.wealth = 0
         self.pops =[]
         self.wealthrate = 0
         self.startpop = 1
@@ -111,7 +111,7 @@ class Faction(object):
 class Population(object):
     def __init__(self, name, owner, x, y):
         self.name = name
-        self.size = 10000 # testing 1000
+        self.size = 1000
         self.growth = 0.006
         self.owner = owner
         self.influence = {self.owner:100}
@@ -354,9 +354,10 @@ class Fortification(object):
         self.cap = 3000
         self.pos_x = x
         self.pos_y = y
-        self.mr = 4  # manuveur range
+        self.mr = 3  # manuveur range
         self.lastryear = 0
-        self.a_damagerate = 0.1
+        self.a_damagerate = 0.25
+        self.damagetaken = 0
 
 ################################################################################
 
@@ -373,9 +374,10 @@ class Army(object):
         self.mr = 1  # manuveur range
         self.lastrdate = 0
         self.desertion = 15
-        self.s_damagerate = 0.1
+        self.s_damagerate = 0.15
         self.o_damagerate = 0.02
         self.a_damagerate = 0.25
+        self.damagetaken = 0
 
     def grow(self):
         self.size += -self.desertion
