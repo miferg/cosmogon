@@ -46,6 +46,7 @@ def threaded_client(conn, player):
             else:
                 reply = players
                 if reply  != origplayers:
+                    print()
                     print("Received: ", data)
                     print("Sending : ", reply)
             

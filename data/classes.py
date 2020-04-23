@@ -70,6 +70,7 @@ class World(object):
                 self.factions[owner].startpop = 0
                 self.factions[owner].settlements.append('ᵃ')
                 self.factions[owner].explored += [(x-1,y-1),(x,y-1),(x+1,y-1),(x-1,y),(x,y),(x+1,y),(x-1,y+1),(x,y+1),(x+1,y+1)]
+                return 1
 
 ################################################################################
 
@@ -98,7 +99,7 @@ class Faction(object):
         self.armies = []
         self.armylist = []
         self.availarmies = 0
-        self.armycost = 9000
+        self.armycost = 6000
 
     def __srt__(self):
         return self.name +", "+ str(self.size) +" inhabitants."
@@ -112,7 +113,7 @@ class Population(object):
     def __init__(self, name, owner, x, y):
         self.name = name
         self.size = 1000
-        self.growth = 0.006
+        self.growth = 0.0065
         self.owner = owner
         self.influence = {self.owner:100}
         self.cap = 10000
@@ -158,7 +159,7 @@ class Population(object):
     def build_town(self, world):
         if world.factions[self.owner].wealth >= 1000:
             if world.factions[self.owner].availtowns > 0:
-                if self.size >= 9000:
+                if self.size >= 8000:
                     if self.food >= 2:
                         if world.mat[self.pos_y][self.pos_x] == 7:
                             world.mat[self.pos_y][self.pos_x] = 8
@@ -363,7 +364,7 @@ class Fortification(object):
 
 class Army(object):
     def __init__(self, owner, x, y, name):
-        self.size = 5000
+        self.size = 4000
         self.owner = owner
         self.name = name
         self.influence = {self.owner:100}
