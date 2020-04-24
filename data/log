@@ -1,0 +1,48 @@
+Waiting for a connection, Server Started
+127.0.0.1
+Connected to: ('127.0.0.1', 49680)
+
+Received:  {'name': 'Oztlán', 'b': [3, 3, 'Hol']}
+Sending :  [{'name': 'Oztlán', 'b': [3, 3, 'Hol']}, {'name': 'Vakag'}]
+
+Received:  {'name': 'Oztlán'}
+Sending :  [{'name': 'Oztlán'}, {'name': 'Vakag'}]
+
+Received:  {'name': 'Oztlán', 'c': [[3, 3], 4, 3]}
+Sending :  [{'name': 'Oztlán', 'c': [[3, 3], 4, 3]}, {'name': 'Vakag'}]
+
+Received:  {'name': 'Oztlán'}
+Sending :  [{'name': 'Oztlán'}, {'name': 'Vakag'}]
+Connected to: ('127.0.0.1', 49682)
+
+Received:  {'name': 'Vakag', 'b': [34, 4, 'Kyöpalenvaero']}
+Sending :  [{'name': 'Oztlán'}, {'name': 'Vakag', 'b': [34, 4, 'Kyöpalenvaero']}]
+
+Received:  {'name': 'Oztlán'}
+Sending :  [{'name': 'Oztlán'}, {'name': 'Vakag', 'b': [34, 4, 'Kyöpalenvaero']}]
+
+Received:  {'name': 'Vakag'}
+Sending :  [{'name': 'Oztlán'}, {'name': 'Vakag'}]
+
+Received:  {'name': 'Oztlán'}
+Sending :  [{'name': 'Oztlán'}, {'name': 'Vakag'}]
+
+Received:  {'name': 'Vakag', 'c': [[34, 4], 33, 4]}
+Sending :  [{'name': 'Oztlán'}, {'name': 'Vakag', 'c': [[34, 4], 33, 4]}]
+
+Received:  {'name': 'Oztlán'}
+Sending :  [{'name': 'Oztlán'}, {'name': 'Vakag', 'c': [[34, 4], 33, 4]}]
+
+Received:  {'name': 'Vakag'}
+Sending :  [{'name': 'Oztlán'}, {'name': 'Vakag'}]
+
+Received:  {'name': 'Oztlán', 'f': [[3, 3], 4, 3]}
+Sending :  [{'name': 'Oztlán', 'f': [[3, 3], 4, 3]}, {'name': 'Vakag'}]
+
+Received:  {'name': 'Vakag'}
+Sending :  [{'name': 'Oztlán', 'f': [[3, 3], 4, 3]}, {'name': 'Vakag'}]
+Lost connection
+
+Received:  {'name': 'Oztlán'}
+Sending :  [{'name': 'Oztlán'}, {'name': 'Vakag'}]
+Lost connection
